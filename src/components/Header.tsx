@@ -41,9 +41,11 @@ const Header = () => {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <div className="flex items-center">
-            <h1 className="text-2xl font-bold text-primary" style={{ fontFamily: 'Poppins, sans-serif' }}>
-              Instituto Casa
-            </h1>
+            <img 
+              src={isScrolled ? "/src/assets/logotipo1.png" : "/src/assets/logotipo2.png"} 
+              alt="Instituto Casa" 
+              className="w-32 h-auto transition-all duration-300" 
+            />
           </div>
 
           {/* Desktop Navigation */}
@@ -52,7 +54,11 @@ const Header = () => {
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className="text-sm font-medium text-foreground hover:text-secondary transition-colors"
+                className={`text-sm font-medium transition-colors ${
+                  isScrolled 
+                    ? "text-primary hover:text-secondary" 
+                    : "text-white hover:text-secondary"
+                }`}
               >
                 {item.label}
               </button>
@@ -82,7 +88,11 @@ const Header = () => {
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className="block w-full text-left py-3 text-foreground hover:text-secondary transition-colors"
+                className={`block w-full text-left py-3 transition-colors ${
+                  isScrolled 
+                    ? "text-primary hover:text-secondary" 
+                    : "text-white hover:text-secondary"
+                }`}
               >
                 {item.label}
               </button>

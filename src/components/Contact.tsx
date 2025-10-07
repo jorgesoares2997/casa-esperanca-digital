@@ -102,7 +102,8 @@ const Contact = () => {
                   <Facebook className="w-6 h-6 text-info" />
                 </a>
                 <a
-                  href="#"
+                  href="https://www.instagram.com/oinstitutocasa/"
+                  target="_blank"
                   className="w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center hover:bg-secondary/20 transition-colors"
                 >
                   <Instagram className="w-6 h-6 text-secondary" />

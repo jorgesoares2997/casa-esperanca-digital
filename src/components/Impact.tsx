@@ -62,14 +62,14 @@ const Impact = () => {
             {testimonials.map((testimonial, index) => (
               <div
                 key={index}
-                className="bg-card rounded-xl shadow-soft p-8 hover:shadow-elevated transition-all duration-300 animate-fade-in"
+                className="bg-card rounded-xl shadow-soft p-8 hover:shadow-elevated transition-all duration-300 animate-fade-in h-[400px] flex flex-col"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <Quote className="w-10 h-10 text-secondary mb-4" />
-                <p className="text-muted-foreground leading-relaxed mb-6 italic">
+                <Quote className="w-10 h-10 text-secondary mb-4 flex-shrink-0" />
+                <p className="text-muted-foreground leading-relaxed italic flex-grow overflow-hidden">
                   "{testimonial.text}"
                 </p>
-                <div className="border-t border-border pt-4">
+                <div className="border-t border-border pt-4 mt-6 flex-shrink-0">
                   <p className="font-bold text-primary">{testimonial.name}</p>
                   <p className="text-sm text-muted-foreground">{testimonial.role}</p>
                 </div>
