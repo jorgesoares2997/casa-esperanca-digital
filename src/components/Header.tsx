@@ -42,7 +42,7 @@ const Header = () => {
           {/* Logo */}
           <div className="flex items-center">
             <img 
-              src={isScrolled ? "/src/assets/logotipo1.png" : "/src/assets/logotipo2.png"} 
+              src={isScrolled ? "/logotipo1.png" : "/logotipo2.png"} 
               alt="Instituto Casa" 
               className="w-32 h-auto transition-all duration-300" 
             />
