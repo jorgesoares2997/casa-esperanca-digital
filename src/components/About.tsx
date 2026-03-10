@@ -48,7 +48,7 @@ const About = () => {
             </p>
             <p className="text-muted-foreground leading-relaxed">
               Hoje, atendemos mulheres grávidas em situação de vulnerabilidade, oferecemos reforço escolar para 
-              crianças e adolescentes, assistência jurídica, apoio nutricional e muito mais. Cada serviço é 
+              crianças e adolescentes, assistência jurídica, apoio psicológico e muito mais. Cada serviço é 
               oferecido com amor, respeito e dedicação, refletindo nosso compromisso com a dignidade humana.
             </p>
           </div>

@@ -24,7 +24,7 @@ const Header = () => {
       setIsMobileMenuOpen(false);
     }
   };
-  
+
   const toggleTheme = () => {
     setTheme(theme === "dark" ? "light" : "dark");
   };
@@ -39,18 +39,17 @@ const Header = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? "bg-background/95 backdrop-blur-md shadow-soft" : "bg-transparent"
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? "bg-background/95 backdrop-blur-md shadow-soft" : "bg-transparent"
+        }`}
     >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <div className="flex items-center">
-            <img 
-              src={isScrolled || theme === 'dark' ? "/logotipo1.png" : "/logotipo2.png"} 
-              alt="Instituto Casa" 
-              className="w-32 h-auto transition-all duration-300" 
+            <img
+              src={isScrolled && theme !== 'dark' ? "/logotipo1.png" : "/logotipo2.png"}
+              alt="Instituto Casa"
+              className="w-32 h-auto transition-all duration-300"
             />
           </div>
 
@@ -60,29 +59,27 @@ const Header = () => {
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className={`text-sm font-medium transition-colors ${
-                  isScrolled || theme === 'dark'
-                    ? "text-primary hover:text-secondary" 
-                    : "text-white hover:text-secondary"
-                }`}
+                className={`text-sm font-medium transition-colors ${isScrolled || theme === 'dark'
+                  ? "text-primary hover:text-secondary"
+                  : "text-white hover:text-secondary"
+                  }`}
               >
                 {item.label}
               </button>
             ))}
-            
+
             <div className="flex items-center gap-4 border-l border-primary/20 pl-4 lg:pl-6">
-              <button 
-                onClick={toggleTheme} 
-                className={`p-2 rounded-full transition-colors ${
-                  isScrolled || theme === 'dark'
-                    ? "text-primary hover:bg-primary/10" 
-                    : "text-white hover:bg-white/20"
-                }`}
+              <button
+                onClick={toggleTheme}
+                className={`p-2 rounded-full transition-colors ${isScrolled || theme === 'dark'
+                  ? "text-primary hover:bg-primary/10"
+                  : "text-white hover:bg-white/20"
+                  }`}
                 aria-label="Toggle theme"
               >
                 {theme === "dark" ? <Sun size={20} /> : <Moon size={20} />}
               </button>
-              
+
               <Button
                 variant="default"
                 onClick={() => scrollToSection("como-ajudar")}
@@ -95,13 +92,12 @@ const Header = () => {
 
           {/* Mobile Menu Button & Theme Toggle */}
           <div className="flex md:hidden items-center gap-4">
-            <button 
-              onClick={toggleTheme} 
-              className={`p-2 rounded-full transition-colors ${
-                isScrolled || theme === 'dark'
-                  ? "text-primary hover:bg-primary/10" 
-                  : "text-white hover:bg-white/20"
-              }`}
+            <button
+              onClick={toggleTheme}
+              className={`p-2 rounded-full transition-colors ${isScrolled || theme === 'dark'
+                ? "text-primary hover:bg-primary/10"
+                : "text-white hover:bg-white/20"
+                }`}
               aria-label="Toggle theme"
             >
               {theme === "dark" ? <Sun size={20} /> : <Moon size={20} />}
