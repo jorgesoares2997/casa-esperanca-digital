@@ -97,12 +97,12 @@ const Footer = () => {
           <div>
             <h4 className="text-lg font-semibold mb-4">Contato</h4>
             <ul className="space-y-2 text-primary-foreground/80">
-              <li>Prazeres, Jaboatão dos Guararapes - PE</li>
-              <li>(81) 9999-9999</li>
-              <li>contato@institutocasa.org.br</li>
+              <li>Rua Aroazes,42 - Prazeres, Jaboatão dos Guararapes-PE, 54310-738</li>
+              <li>(81)3476-1274</li>
+              <li>oinstitutocasa@gmail.com</li>
               <li className="pt-2">
-                <strong className="text-primary-foreground">Horário:</strong><br />
-                Seg - Sex: 8h às 17h
+                <strong className="text-primary-foreground">Horário de funcionamento:</strong><br />
+                Terça e quarta 09:00-17:00
               </li>
             </ul>
           </div>

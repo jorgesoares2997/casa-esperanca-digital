@@ -1,21 +1,26 @@
 import { Heart, Users, BookOpen } from "lucide-react";
 
 const About = () => {
-  const values = [
+  const pilares = [
     {
       icon: Heart,
-      title: "Amor e Compaixão",
-      description: "Guiados pelos princípios cristãos, acolhemos cada pessoa com amor incondicional."
+      title: "Cuidar",
+      description: "Demonstrar atenção, zelo e comprometimento com as pessoas e as causas abraçadas pelo Instituto."
+    },
+    {
+      icon: Heart,
+      title: "Amar",
+      description: "Agir com empatia, solidariedade e compaixão, valorizando o ser humano em sua totalidade."
     },
     {
       icon: Users,
-      title: "Comunidade",
-      description: "Fortalecemos laços e construímos uma rede de apoio mútuo e solidariedade."
+      title: "Servir",
+      description: "Colocar-se à disposição da sociedade e da comunidade, promovendo ações que tragam impacto positivo e transformação social."
     },
     {
-      icon: BookOpen,
-      title: "Esperança e Fé",
-      description: "Inspiramos transformação através da fé e do apoio em momentos de vulnerabilidade."
+      icon: Users,
+      title: "Acolher",
+      description: "Promover um ambiente inclusivo e receptivo, onde todos se sintam valorizados e respeitados."
     }
   ];
 
@@ -49,18 +54,24 @@ const About = () => {
           </div>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          {values.map((value, index) => (
+        <div className="text-center mb-10 animate-fade-in">
+          <h3 className="text-3xl font-bold text-primary" style={{ fontFamily: 'Poppins, sans-serif' }}>
+            Nossos Pilares
+          </h3>
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          {pilares.map((pilar, index) => (
             <div
               key={index}
               className="bg-card rounded-xl shadow-soft p-8 text-center hover:shadow-elevated transition-all duration-300 animate-fade-in"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <value.icon className="w-8 h-8 text-accent" />
+                <pilar.icon className="w-8 h-8 text-accent" />
               </div>
-              <h4 className="text-xl font-bold mb-3 text-primary">{value.title}</h4>
-              <p className="text-muted-foreground">{value.description}</p>
+              <h4 className="text-xl font-bold mb-3 text-primary">{pilar.title}</h4>
+              <p className="text-muted-foreground">{pilar.description}</p>
             </div>
           ))}
         </div>

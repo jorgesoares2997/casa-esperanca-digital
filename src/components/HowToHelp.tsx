@@ -13,14 +13,14 @@ const HowToHelp = () => {
     {
       icon: Package,
       title: "Doação de Materiais",
-      description: "Alimentos, roupas, materiais escolares e produtos de higiene são sempre bem-vindos.",
+      description: "Alimentos, roupas, itens para bebê e gestantes e produtos de higiene são sempre bem-vindos.",
       cta: "Saiba Mais",
       color: "accent"
     },
     {
       icon: Users,
       title: "Voluntariado",
-      description: "Doe seu tempo e talentos. Precisamos de professores, advogados, nutricionistas e mais.",
+      description: "Doe seu tempo e talentos. Precisamos de professores, advogados, nutricionistas, psicólogos e mais.",
       cta: "Seja Voluntário",
       color: "info"
     },
@@ -52,7 +52,7 @@ const HowToHelp = () => {
             Como Ajudar
           </h2>
           <p className="text-lg text-muted-foreground leading-relaxed">
-            Existem várias formas de contribuir com nossa missão. Cada gesto, por menor que seja, 
+            Existem várias formas de contribuir com nossa missão. Cada gesto, por menor que seja,
             faz uma diferença enorme na vida de quem precisa.
           </p>
         </div>
@@ -86,7 +86,7 @@ const HowToHelp = () => {
             Transforme Vidas Hoje
           </h3>
           <p className="text-lg leading-relaxed mb-8">
-            "Porque tive fome, e me destes de comer; tive sede, e me destes de beber; 
+            "Porque tive fome, e me destes de comer; tive sede, e me destes de beber;
             era forasteiro, e me acolhestes." - Mateus 25:35
           </p>
           <Button

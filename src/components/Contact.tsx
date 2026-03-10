@@ -2,11 +2,13 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { MapPin, Phone, Mail, Clock, Facebook, Instagram } from "lucide-react";
+import { MapPin, Phone, Mail, Clock, Facebook, Instagram, Loader2 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { sendEmailMessage } from "@/api/email";
 
 const Contact = () => {
   const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -14,7 +16,7 @@ const Contact = () => {
     message: ""
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
     // Basic validation
@@ -27,36 +29,52 @@ const Contact = () => {
       return;
     }
 
-    // Here you would typically send the data to a backend
-    toast({
-      title: "Mensagem enviada!",
-      description: "Entraremos em contato em breve. Obrigado!",
-    });
+    setIsSubmitting(true);
+    
+    try {
+      // Send the data using our mocked email service
+      const response = await sendEmailMessage(formData);
+      
+      if (response.success) {
+        toast({
+          title: "Mensagem enviada com sucesso!",
+          description: "Sua mensagem foi entregue e uma cópia foi enviada para o seu e-mail.",
+        });
 
-    // Reset form
-    setFormData({ name: "", email: "", phone: "", message: "" });
+        // Reset form
+        setFormData({ name: "", email: "", phone: "", message: "" });
+      }
+    } catch (error) {
+      toast({
+        title: "Erro ao enviar",
+        description: "Ocorreu um problema ao enviar sua mensagem. Tente novamente mais tarde.",
+        variant: "destructive"
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const contactInfo = [
     {
+      icon: Mail,
+      title: "E-mail",
+      content: "oinstitutocasa@gmail.com"
+    },
+    {
       icon: MapPin,
       title: "Endereço",
-      content: "Prazeres, Jaboatão dos Guararapes - PE"
+      content: "Rua Aroazes,42 - Prazeres, Jaboatão dos Guararapes-PE, 54310-738"
     },
     {
       icon: Phone,
       title: "Telefone",
-      content: "(81) 9999-9999"
-    },
-    {
-      icon: Mail,
-      title: "E-mail",
-      content: "contato@institutocasa.org.br"
+      content: "(81)3476-1274"
     },
     {
       icon: Clock,
-      title: "Horário",
-      content: "Seg - Sex: 8h às 17h"
+      title: "Horário de funcionamento",
+      content: "Terça e quarta 09:00-17:00"
     }
   ];
 
@@ -174,9 +192,11 @@ const Contact = () => {
               <Button
                 type="submit"
                 size="lg"
-                className="w-full bg-accent hover:bg-accent/90 text-accent-foreground font-bold"
+                disabled={isSubmitting}
+                className="w-full bg-accent hover:bg-accent/90 text-accent-foreground font-bold disabled:opacity-70 flex gap-2 items-center justify-center"
               >
-                Enviar Mensagem
+                {isSubmitting && <Loader2 className="w-5 h-5 animate-spin" />}
+                {isSubmitting ? "Enviando..." : "Enviar Mensagem"}
               </Button>
             </form>
           </div>
