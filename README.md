@@ -1,73 +1,75 @@
-# Welcome to your Lovable project
+# Casa Esperança Digital
 
-## Project info
+Bem-vindo ao repositório do **Instituto Casa Esperança Digital**. Este é o código-fonte da landing page/site institucional da organização, que tem como missão levar esperança, dignidade e apoio às famílias em situação de vulnerabilidade em Prazeres, Jaboatão dos Guararapes.
 
-**URL**: https://lovable.dev/projects/5ea7472e-3ff8-428d-805f-7610795c1622
+## 🚀 Tecnologias Utilizadas
 
-## How can I edit this code?
+O projeto foi construído utilizando as ferramentas e práticas mais modernas do ecossistema React:
 
-There are several ways of editing your application.
+- **React 18** (com TypeScript)
+- **Vite** (Build tool e servidor de desenvolvimento super rápido)
+- **Tailwind CSS** (Estilização utilitária e responsiva)
+- **shadcn/ui** e **Radix UI** (Componentes de UI acessíveis e altamente customizáveis)
+- **Lucide React** (Ícones SVG maravilhosos e consistentes)
+- **React Router** (Navegação SPA)
 
-**Use Lovable**
+## 📦 Como iniciar o projeto localmente
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/5ea7472e-3ff8-428d-805f-7610795c1622) and start prompting.
+Você precisará ter o **Node.js** e o **pnpm** (ou npm/yarn) instalados na sua máquina.
 
-Changes made via Lovable will be committed automatically to this repo.
+1. **Clone o repositório**
+   ```bash
+   git clone <URL_DO_REPOSITORIO>
+   cd casa-esperanca-digital
+   ```
 
-**Use your preferred IDE**
+2. **Instale as dependências**
+   ```bash
+   pnpm install
+   # ou npm install
+   ```
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+3. **Inicie o servidor de desenvolvimento**
+   ```bash
+   pnpm run dev
+   # ou npm run dev
+   ```
+   
+   O projeto estará disponível em `http://localhost:5173` (ou a porta disponível listada no seu terminal).
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+4. **Gerar Versão de Produção (Build)**
+   ```bash
+   pnpm run build
+   ```
+   Os arquivos compilados estarão na pasta `dist/`.
 
-Follow these steps:
+## 📁 Estrutura do Projeto
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+Abaixo uma visão simplificada da arquitetura do projeto:
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+```text
+src/
+├── api/             # Serviços mockados/integrações (ex: mock de email)
+├── assets/          # Imagens, fontes e outros recursos estáticos
+├── components/      # Componentes React reutilizáveis
+│   ├── ui/          # Componentes base do shadcn/ui (Button, Input, etc)
+│   └── ...          # Blocos da página (Contact, About, Header, Footer...)
+├── hooks/           # Hooks customizados do React
+├── lib/             # Utilitários (como o `cn` para mesclar classes Tailwind)
+├── pages/           # Visualizações de página completas (Index.tsx, NotFound.tsx)
+├── App.tsx          # Ponto de entrada das rotas e provedores
+└── main.tsx         # Ponto de entrada do React DOM
 ```
 
-**Edit a file directly in GitHub**
+## 🤝 Como Ajudar o Instituto
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+O sistema dispõe de rotas diretas de API do WhatsApp para que qualquer visitante possa contatar a organização rapidamente a respeito de:
+- **Doações Financeiras**
+- **Doações de Materiais**
+- **Voluntariado**
+- **Parcerias**
 
-**Use GitHub Codespaces**
+Todo o fluxo é integrado na seção "Como Ajudar".
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/5ea7472e-3ff8-428d-805f-7610795c1622) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+---
+*Feito com ❤️ para a comunidade.*

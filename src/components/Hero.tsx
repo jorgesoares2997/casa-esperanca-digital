@@ -35,7 +35,7 @@ const Hero = () => {
           </h1>
 
           <p className="text-xl md:text-2xl mb-8 text-white/90 leading-relaxed">
-            Em Prazeres, Jaboatão dos Guararapes - PE, oferecemos assistência social cristã com amor, 
+            Em Prazeres, Jaboatão dos Guararapes - PE, oferecemos assistência social cristã com amor,
             acolhimento e suporte integral para quem mais precisa.
           </p>
 
@@ -52,7 +52,7 @@ const Hero = () => {
               size="lg"
               variant="outline"
               onClick={() => scrollToSection("quem-somos")}
-              className="bg-white/10 backdrop-blur-sm text-white border-white/30 hover:bg-white/20 font-bold text-lg px-8 py-6"
+              className="bg-white/10 backdrop-blur-sm text-white border-white/30 hover:bg-white/20 font-bold text-lg px-8 py-6 mb-10"
             >
               Conheça Nossa História
             </Button>
@@ -61,7 +61,7 @@ const Hero = () => {
       </div>
 
       {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+      <div className="hidden md:block absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
         <div className="w-6 h-10 border-2 border-white/50 rounded-full flex items-start justify-center p-2">
           <div className="w-1 h-3 bg-white/70 rounded-full"></div>
         </div>

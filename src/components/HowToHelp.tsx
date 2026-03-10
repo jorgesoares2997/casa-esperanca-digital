@@ -8,36 +8,39 @@ const HowToHelp = () => {
       title: "Doação Financeira",
       description: "Sua contribuição financeira ajuda a manter nossos serviços e expandir nosso alcance na comunidade.",
       cta: "Doar Agora",
-      color: "secondary"
+      color: "secondary",
+      whatsappMsg: "Olá, gostaria de fazer uma doação financeira para o Instituto."
     },
     {
       icon: Package,
       title: "Doação de Materiais",
       description: "Alimentos, roupas, itens para bebê e gestantes e produtos de higiene são sempre bem-vindos.",
       cta: "Saiba Mais",
-      color: "accent"
+      color: "accent",
+      whatsappMsg: "Olá, gostaria de doar materiais para o Instituto Casa."
     },
     {
       icon: Users,
       title: "Voluntariado",
       description: "Doe seu tempo e talentos. Precisamos de professores, advogados, nutricionistas, psicólogos e mais.",
       cta: "Seja Voluntário",
-      color: "info"
+      color: "info",
+      whatsappMsg: "Olá, tenho interesse em ser voluntário no Instituto Casa."
     },
     {
       icon: Handshake,
       title: "Parcerias",
       description: "Empresas e organizações podem fazer parcerias conosco para projetos específicos.",
       cta: "Fazer Parceria",
-      color: "primary"
+      color: "primary",
+      whatsappMsg: "Olá, gostaria de firmar uma parceria com o Instituto."
     }
   ];
 
-  const scrollToContact = () => {
-    const element = document.getElementById("contato");
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
+  const openWhatsApp = (message: string) => {
+    const phoneNumber = "5581992074377";
+    const encodedMessage = encodeURIComponent(message);
+    window.open(`https://wa.me/${phoneNumber}?text=${encodedMessage}`, '_blank');
   };
 
   return (
@@ -71,7 +74,7 @@ const HowToHelp = () => {
               <p className="text-muted-foreground leading-relaxed mb-6">{way.description}</p>
               <Button
                 variant="outline"
-                onClick={scrollToContact}
+                onClick={() => openWhatsApp(way.whatsappMsg)}
                 className="group/btn"
               >
                 {way.cta}
@@ -91,7 +94,7 @@ const HowToHelp = () => {
           </p>
           <Button
             size="lg"
-            onClick={scrollToContact}
+            onClick={() => openWhatsApp("Olá, gostaria de entrar em contato com o Instituto.")}
             className="bg-secondary hover:bg-secondary/90 text-secondary-foreground font-bold text-lg px-8 py-6"
           >
             Entre em Contato
