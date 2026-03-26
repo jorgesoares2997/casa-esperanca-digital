@@ -1,79 +1,62 @@
-import { Quote, Users, Heart, BookOpen, Scale } from "lucide-react";
-
 const Impact = () => {
   const stats = [
-    { icon: Users, number: "500+", label: "Famílias Atendidas" },
-    { icon: Heart, number: "100+", label: "Mulheres Apoiadas" },
-    { icon: BookOpen, number: "200+", label: "Crianças em Reforço Escolar" },
-    { icon: Scale, number: "150+", label: "Atendimentos Jurídicos" }
+    { number: "500+", label: "Famílias atendidas" },
+    { number: "200+", label: "Crianças em reforço escolar" },
+    { number: "100+", label: "Mulheres apoiadas" },
+    { number: "150+", label: "Atendimentos jurídicos" },
   ];
 
   const testimonials = [
     {
-      name: "Maria Silva",
-      role: "Mãe Assistida",
-      text: "O Instituto Casa foi um verdadeiro presente de Deus na minha vida. Durante minha gravidez, encontrei não apenas apoio material, mas também amor, compreensão e fé. Hoje sou mãe de um bebê saudável e tenho esperança no futuro."
+      text: "O Instituto Casa foi um presente de Deus na minha vida. Durante minha gravidez, encontrei não apenas apoio material, mas amor e compreensão. Hoje sou mãe de um bebê saudável e tenho esperança no futuro.",
+      name: "Maria S.",
+      role: "Mãe assistida pelo programa",
     },
     {
-      name: "João Santos",
-      role: "Pai de Aluno",
-      text: "Meu filho estava com dificuldades na escola e o reforço escolar do Instituto Casa mudou tudo. Hoje ele é um dos melhores alunos da turma. Sou eternamente grato pela dedicação e carinho dos professores."
+      text: "Meu filho estava com dificuldades na escola e o reforço escolar mudou tudo. Hoje ele é um dos melhores alunos da turma. Sou eternamente grato pela dedicação dos professores.",
+      name: "João P.",
+      role: "Pai de aluno do reforço escolar",
     },
-    {
-      name: "Ana Costa",
-      role: "Voluntária",
-      text: "Fazer parte do Instituto Casa é uma bênção. Ver o impacto real que fazemos na comunidade e nos rostos das pessoas que ajudamos não tem preço. É Cristo em ação através de nós."
-    }
   ];
 
   return (
-    <section id="impacto" className="py-20 bg-muted/30">
-      <div className="container mx-auto px-4">
-        {/* Stats Section */}
-        <div className="max-w-6xl mx-auto mb-20">
-          <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center text-primary animate-fade-in" style={{ fontFamily: 'Poppins, sans-serif' }}>
-            Nosso Impacto
+    <section id="impacto" className="py-20 md:py-32 bg-muted/50">
+      <div className="container mx-auto px-4 md:px-8">
+        <div className="max-w-3xl mb-16">
+          <p className="text-sm font-medium tracking-widest uppercase text-muted-foreground mb-6">
+            Nosso impacto
+          </p>
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground leading-tight">
+            Números que representam vidas transformadas.
           </h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {stats.map((stat, index) => (
-              <div
-                key={index}
-                className="text-center animate-fade-in"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <stat.icon className="w-8 h-8 text-accent" />
-                </div>
-                <div className="text-4xl font-bold text-primary mb-2" style={{ fontFamily: 'Poppins, sans-serif' }}>
-                  {stat.number}
-                </div>
-                <div className="text-muted-foreground font-medium">{stat.label}</div>
-              </div>
-            ))}
-          </div>
         </div>
 
-        {/* Testimonials Section */}
-        <div className="max-w-6xl mx-auto">
-          <h3 className="text-3xl md:text-4xl font-bold mb-12 text-center text-primary animate-fade-in" style={{ fontFamily: 'Poppins, sans-serif' }}>
-            Histórias de Transformação
-          </h3>
-          <div className="grid md:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <div
-                key={index}
-                className="bg-card rounded-xl shadow-soft p-8 hover:shadow-elevated transition-all duration-300 animate-fade-in h-[400px] flex flex-col"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <Quote className="w-10 h-10 text-secondary mb-4 flex-shrink-0" />
-                <p className="text-muted-foreground leading-relaxed italic flex-grow overflow-hidden">
-                  "{testimonial.text}"
-                </p>
-                <div className="border-t border-border pt-4 mt-6 flex-shrink-0">
-                  <p className="font-bold text-primary">{testimonial.name}</p>
-                  <p className="text-sm text-muted-foreground">{testimonial.role}</p>
-                </div>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 mb-20">
+          {stats.map((stat, index) => (
+            <div key={index}>
+              <div className="text-4xl md:text-5xl font-bold text-secondary mb-2">
+                {stat.number}
               </div>
+              <div className="text-sm text-muted-foreground">{stat.label}</div>
+            </div>
+          ))}
+        </div>
+
+        <div className="border-t border-border pt-16">
+          <p className="text-sm font-medium tracking-widest uppercase text-muted-foreground mb-10">
+            Depoimentos
+          </p>
+          <div className="grid md:grid-cols-2 gap-12">
+            {testimonials.map((t, index) => (
+              <blockquote key={index} className="space-y-6">
+                <p className="text-lg md:text-xl text-foreground leading-relaxed font-serif italic">
+                  "{t.text}"
+                </p>
+                <footer>
+                  <p className="font-semibold text-foreground text-sm">{t.name}</p>
+                  <p className="text-muted-foreground text-sm">{t.role}</p>
+                </footer>
+              </blockquote>
             ))}
           </div>
         </div>
