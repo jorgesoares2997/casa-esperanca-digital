@@ -3,7 +3,8 @@ import { useLanguage } from "@/contexts/LanguageContext";
 
 const Hero = () => {
   const { t } = useLanguage();
-  const videoUrl = "https://port-bu.s3.eu-north-1.amazonaws.com/gerandoamor.mp4";
+  const videoUrl = "https://port-bu.s3.eu-north-1.amazonaws.com/gerandoamor.mov";
+  const videoUrlMobile = "https://port-bu.s3.eu-north-1.amazonaws.com/gerandoamormobile.mov";
   const [showHeroText, setShowHeroText] = useState(false);
   const topSentinelRef = useRef<HTMLDivElement | null>(null);
 
@@ -36,14 +37,16 @@ const Hero = () => {
       <div ref={topSentinelRef} className="absolute top-0 left-0 right-0 h-1 pointer-events-none" />
       <div className="absolute inset-0 z-0">
         <video
-          src={videoUrl}
           autoPlay
           loop
           muted
           playsInline
-          className="w-full h-full object-contain bg-black/20 scale-100 sm:object-cover sm:object-center sm:scale-110"
+          className="w-full h-full object-cover object-center scale-110"
           aria-hidden="true"
-        />
+        >
+          <source src={videoUrlMobile} type="video/quicktime" media="(max-width: 639px)" />
+          <source src={videoUrl} type="video/mp4" />
+        </video>
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20" />
       </div>
 

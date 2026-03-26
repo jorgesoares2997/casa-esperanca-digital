@@ -20,7 +20,7 @@ const Impact = () => {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       aria-hidden="true"
-      className="h-5 w-5 text-primary"
+      className="h-5 w-5 text-[#F59E0B]"
     >
       <path
         d="M14.8 6.2L8.2 12L14.8 17.8"
@@ -38,7 +38,7 @@ const Impact = () => {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       aria-hidden="true"
-      className="h-5 w-5 text-primary"
+      className="h-5 w-5 text-[#F59E0B]"
     >
       <path
         d="M9.2 6.2L15.8 12L9.2 17.8"
@@ -120,7 +120,7 @@ const Impact = () => {
                 type="button"
                 onClick={() => api?.scrollPrev()}
                 aria-label="Previous testimonial"
-                className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-border bg-background text-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
+                className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-[#F59E0B] bg-background text-[#F59E0B] transition-colors hover:bg-accent hover:text-accent-foreground"
               >
                 <BrandArrowLeft />
               </button>
@@ -128,7 +128,7 @@ const Impact = () => {
                 type="button"
                 onClick={() => api?.scrollNext()}
                 aria-label="Next testimonial"
-                className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-border bg-background text-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
+                className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-[#F59E0B] bg-background text-[#F59E0B] transition-colors hover:bg-accent hover:text-accent-foreground"
               >
                 <BrandArrowRight />
               </button>
