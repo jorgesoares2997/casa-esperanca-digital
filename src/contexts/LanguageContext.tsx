@@ -23,20 +23,20 @@ const translations: Translations = {
   "problem.tag": { pt: "A realidade", en: "The reality" },
   "problem.title": { pt: "Na periferia de Jaboatão dos Guararapes, centenas de famílias vivem sem acesso a direitos básicos.", en: "On the outskirts of Jaboatão dos Guararapes, hundreds of families live without access to basic rights." },
   "problem.p1": { pt: "Mulheres grávidas sem acompanhamento. Crianças sem reforço escolar. Famílias sem orientação jurídica ou nutricional. Pessoas que esperam horas em filas de postos de saúde sem qualquer apoio.", en: "Pregnant women without prenatal care. Children without tutoring. Families without legal or nutritional guidance. People waiting hours in health clinic lines without any support." },
-  "problem.p2": { pt: "A comunidade de Prazeres carrega desafios estruturais que exigem mais do que políticas públicas — exigem presença, escuta e ação concreta.", en: "The Prazeres community faces structural challenges that require more than public policies — they require presence, listening and concrete action." },
+  "problem.p2": { pt: "A comunidade de Prazeres carrega desafios estruturais que exigem mais do que políticas públicas exigem presença, escuta e ação concreta.", en: "The Prazeres community faces structural challenges that require more than public policies they require presence, listening and concrete action." },
 
   // About
   "about.tag": { pt: "Quem somos", en: "About us" },
   "about.title": { pt: "Uma resposta de fé à vulnerabilidade social.", en: "A faith-driven response to social vulnerability." },
   "about.p1": { pt: "O Instituto Casa nasceu do compromisso cristão de servir ao próximo com dignidade e respeito. Atuamos em Prazeres, Jaboatão dos Guararapes, oferecendo assistência integral a famílias que vivem em situação de vulnerabilidade.", en: "Instituto Casa was born from the Christian commitment to serve others with dignity and respect. We operate in Prazeres, Jaboatão dos Guararapes, offering comprehensive assistance to families living in vulnerable situations." },
-  "about.p2": { pt: "Nosso trabalho é guiado por quatro pilares: Cuidar, Amar, Servir e Acolher — valores que se traduzem em ações concretas de transformação social, com transparência e responsabilidade em cada projeto.", en: "Our work is guided by four pillars: Care, Love, Serve and Welcome — values that translate into concrete social transformation actions, with transparency and responsibility in every project." },
+  "about.p2": { pt: "Nosso trabalho é guiado por quatro pilares: Cuidar, Amar, Servir e Acolher valores que se traduzem em ações concretas de transformação social, com transparência e responsabilidade em cada projeto.", en: "Our work is guided by four pillars: Care, Love, Serve and Welcome values that translate into concrete social transformation actions, with transparency and responsibility in every project." },
   "about.p3": { pt: "Acreditamos que investir em pessoas é a forma mais eficiente de transformar uma comunidade. Por isso, cada programa que executamos é pensado para gerar impacto mensurável e duradouro.", en: "We believe that investing in people is the most efficient way to transform a community. That's why every program we run is designed to generate measurable and lasting impact." },
 
   // Services
   "services.tag": { pt: "O que fazemos", en: "What we do" },
   "services.title": { pt: "Programas que transformam a realidade da comunidade.", en: "Programs that transform the community's reality." },
   "services.pregnant.title": { pt: "Apoio a Gestantes", en: "Maternal Support" },
-  "services.pregnant.desc": { pt: "Acompanhamento integral durante a gestação para mulheres em situação de vulnerabilidade — suporte emocional, orientação e recursos para um período seguro.", en: "Comprehensive support during pregnancy for vulnerable women — emotional support, guidance and resources for a safe journey." },
+  "services.pregnant.desc": { pt: "Acompanhamento integral durante a gestação para mulheres em situação de vulnerabilidade suporte emocional, orientação e recursos para um período seguro.", en: "Comprehensive support during pregnancy for vulnerable women emotional support, guidance and resources for a safe journey." },
   "services.school.title": { pt: "Reforço Escolar", en: "Tutoring" },
   "services.school.desc": { pt: "Educação complementar para crianças e adolescentes da comunidade, com foco no desenvolvimento integral e na construção de um futuro com mais oportunidades.", en: "Supplementary education for community children and teenagers, focused on holistic development and building a future with more opportunities." },
   "services.legal.title": { pt: "Assistência Jurídica", en: "Legal Aid" },
@@ -93,7 +93,7 @@ const translations: Translations = {
 
   // FinalCTA
   "cta.title": { pt: "Você pode transformar a realidade de uma comunidade inteira.", en: "You can transform the reality of an entire community." },
-  "cta.subtitle": { pt: "Converse com nossa equipe e descubra como sua contribuição — financeira, material ou profissional — pode gerar impacto mensurável.", en: "Talk to our team and discover how your contribution — financial, material or professional — can generate measurable impact." },
+  "cta.subtitle": { pt: "Converse com nossa equipe e descubra como sua contribuição financeira, material ou profissional pode gerar impacto mensurável.", en: "Talk to our team and discover how your contribution financial, material or professional can generate measurable impact." },
   "cta.button": { pt: "Fale com o Instituto Casa", en: "Talk to Instituto Casa" },
 
   // Contact

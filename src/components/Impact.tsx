@@ -1,10 +1,18 @@
 import { useEffect, useState } from "react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
+import {
+  Carousel,
+  CarouselApi,
+  CarouselContent,
+  CarouselItem,
+} from "@/components/ui/carousel";
 import ScrollRevealText from "@/components/ScrollRevealText";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const Impact = () => {
   const { t } = useLanguage();
-  const [startIndex, setStartIndex] = useState(0);
+  const [api, setApi] = useState<CarouselApi>();
+  const [isPaused, setIsPaused] = useState(false);
 
   const stats = [
     { number: "500+", labelKey: "impact.families" },
@@ -32,19 +40,14 @@ const Impact = () => {
   ];
 
   useEffect(() => {
-    if (testimonials.length <= 1) return;
+    if (!api || testimonials.length <= 1 || isPaused) return;
 
     const intervalId = window.setInterval(() => {
-      setStartIndex((prev) => (prev + 1) % testimonials.length);
-    }, 6000);
+      api.scrollNext();
+    }, 5000);
 
     return () => window.clearInterval(intervalId);
-  }, [testimonials.length]);
-
-  const visibleTestimonials =
-    testimonials.length > 1
-      ? [testimonials[startIndex], testimonials[(startIndex + 1) % testimonials.length]]
-      : testimonials;
+  }, [api, testimonials.length, isPaused]);
 
   return (
     <section id="impacto" className="py-24 md:py-40 bg-muted/50">
@@ -72,22 +75,53 @@ const Impact = () => {
         </div>
 
         <div className="border-t border-border pt-16">
-          <p className="text-sm font-medium tracking-widest uppercase text-muted-foreground mb-10">
-            {t("impact.testimonials")}
-          </p>
-          <div className="grid md:grid-cols-2 gap-12">
-            {visibleTestimonials.map((testimonial, index) => (
-              <blockquote key={index} className="space-y-6">
-                <p className="text-lg md:text-xl text-foreground leading-relaxed font-serif italic">
-                  "{t(testimonial.textKey)}"
-                </p>
-                <footer>
-                  <p className="font-semibold text-foreground text-sm">{t(testimonial.nameKey)}</p>
-                  <p className="text-muted-foreground text-sm">{t(testimonial.roleKey)}</p>
-                </footer>
-              </blockquote>
-            ))}
+          <div className="mb-10 flex items-center justify-between gap-4">
+            <p className="text-sm font-medium tracking-widest uppercase text-muted-foreground">
+              {t("impact.testimonials")}
+            </p>
+            <div className="flex items-center gap-3">
+              <button
+                type="button"
+                onClick={() => api?.scrollPrev()}
+                aria-label="Previous testimonial"
+                className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-border bg-background text-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
+              >
+                <ArrowLeft className="h-4 w-4" />
+              </button>
+              <button
+                type="button"
+                onClick={() => api?.scrollNext()}
+                aria-label="Next testimonial"
+                className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-border bg-background text-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
+              >
+                <ArrowRight className="h-4 w-4" />
+              </button>
+            </div>
           </div>
+
+          <Carousel
+            setApi={setApi}
+            opts={{ loop: true, align: "start", duration: 30 }}
+            onMouseEnter={() => setIsPaused(true)}
+            onMouseLeave={() => setIsPaused(false)}
+            className="w-full"
+          >
+            <CarouselContent>
+              {testimonials.map((testimonial, index) => (
+                <CarouselItem key={index} className="basis-full md:basis-1/2">
+                  <blockquote className="space-y-6 rounded-xl border border-border bg-card p-6 md:p-8 h-full">
+                    <p className="text-lg md:text-xl text-foreground leading-relaxed font-serif italic">
+                      "{t(testimonial.textKey)}"
+                    </p>
+                    <footer>
+                      <p className="font-semibold text-foreground text-sm">{t(testimonial.nameKey)}</p>
+                      <p className="text-muted-foreground text-sm">{t(testimonial.roleKey)}</p>
+                    </footer>
+                  </blockquote>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+          </Carousel>
         </div>
       </div>
     </section>
