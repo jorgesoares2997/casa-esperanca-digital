@@ -1,17 +1,35 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { useTheme } from "@/components/theme-provider";
+import ThemeToggle from "@/components/ThemeToggle";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { t } = useLanguage();
+  const { theme } = useTheme();
+  const [isDarkTheme, setIsDarkTheme] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  useEffect(() => {
+    if (theme === "dark") {
+      setIsDarkTheme(true);
+      return;
+    }
+
+    if (theme === "light") {
+      setIsDarkTheme(false);
+      return;
+    }
+
+    setIsDarkTheme(window.matchMedia("(prefers-color-scheme: dark)").matches);
+  }, [theme]);
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -41,34 +59,38 @@ const Header = () => {
         <div className="flex items-center justify-between h-16 md:h-20">
           <button onClick={() => scrollToSection("inicio")} className="flex items-center">
             <img
-              src={isScrolled ? "/logotipo1.png" : "/logotipo2.png"}
+              src={isDarkTheme ? "/logotipo2.png" : isScrolled ? "/logotipo1.png" : "/logotipo2.png"}
               alt="Instituto Casa"
               className="h-8 md:h-10 w-auto transition-all duration-300"
             />
           </button>
 
-          <nav className="hidden md:flex items-center gap-8">
-            {navItems.map((item) => (
-              <button
-                key={item.id}
-                onClick={() => scrollToSection(item.id)}
-                className={`text-[13px] font-medium tracking-wide uppercase transition-colors duration-200 ${
-                  isScrolled
-                    ? "text-foreground/70 hover:text-foreground"
-                    : "text-white/80 hover:text-white"
-                }`}
-              >
-                {item.label}
-              </button>
-            ))}
-          </nav>
+          <div className="flex items-center gap-3 md:gap-4">
+            <nav className="hidden md:flex items-center gap-8">
+              {navItems.map((item) => (
+                <button
+                  key={item.id}
+                  onClick={() => scrollToSection(item.id)}
+                  className={`text-[13px] font-medium tracking-wide uppercase transition-colors duration-200 ${
+                    isScrolled
+                      ? "text-foreground/70 hover:text-foreground"
+                      : "text-white/80 hover:text-white"
+                  }`}
+                >
+                  {item.label}
+                </button>
+              ))}
+            </nav>
 
-          <button
-            className={`md:hidden p-2 ${isScrolled ? "text-foreground" : "text-white"}`}
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          >
-            {isMobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
-          </button>
+            <ThemeToggle />
+
+            <button
+              className={`md:hidden p-2 ${isScrolled ? "text-foreground" : "text-white"}`}
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            >
+              {isMobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
+            </button>
+          </div>
         </div>
 
         {isMobileMenuOpen && (

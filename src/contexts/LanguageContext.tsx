@@ -50,6 +50,7 @@ const translations: Translations = {
   "services.nursing.title": { pt: "Enfermagem", en: "Nursing" },
   "services.nursing.desc": { pt: "Pré-natal de baixo risco e cuidados de enfermagem para gestantes e famílias da comunidade.", en: "Low-risk prenatal care and nursing for expectant mothers and community families." },
   "services.comingSoon": { pt: "Em breve", en: "Coming soon" },
+  "services.waitingProfessionals": { pt: "Aguardando profissionais", en: "Waiting for professionals" },
   "services.prenatal": { pt: "Pré-natal de baixo risco", en: "Low-risk prenatal" },
 
   // Impact
@@ -66,6 +67,12 @@ const translations: Translations = {
   "impact.t2.text": { pt: "Meu filho estava com dificuldades na escola e o reforço escolar mudou tudo. Hoje ele é um dos melhores alunos da turma. Sou eternamente grato pela dedicação dos professores.", en: "My son was struggling in school and the tutoring changed everything. Today he is one of the best students in his class. I am forever grateful for the teachers' dedication." },
   "impact.t2.name": { pt: "João P.", en: "João P." },
   "impact.t2.role": { pt: "Pai de aluno do reforço escolar", en: "Father of a tutoring student" },
+  "impact.t3.text": {
+    pt: "Sou Maria Vaniclea, assistente social no Instituto Casa, e sou grata por servir famílias em situação de vulnerabilidade com acolhimento, orientação e escuta. A cada atendimento, renovo meu compromisso com a justiça social, a esperança e o amor ao próximo, com empatia e responsabilidade.",
+    en: "I am Maria Vaniclea, a social worker at Instituto Casa, and I am grateful to support vulnerable families with care, guidance, and active listening. With every appointment, I renew my commitment to social justice, hope, and love for others, with empathy and responsibility."
+  },
+  "impact.t3.name": { pt: "Maria Vaniclea", en: "Maria Vaniclea" },
+  "impact.t3.role": { pt: "Assistente social", en: "Social worker" },
 
   // HowToHelp
   "help.tag": { pt: "Como apoiar", en: "How to help" },
@@ -73,15 +80,19 @@ const translations: Translations = {
   "help.subtitle": { pt: "Existem diferentes formas de contribuir com a missão do Instituto Casa. Cada tipo de apoio cumpre um papel essencial na sustentabilidade dos nossos programas.", en: "There are different ways to contribute to Instituto Casa's mission. Each type of support plays an essential role in the sustainability of our programs." },
   "help.partnership.title": { pt: "Parceria institucional", en: "Institutional partnership" },
   "help.partnership.desc": { pt: "Empresas e organizações podem apoiar programas específicos, vincular sua marca a impacto social real e receber relatórios de resultados.", en: "Companies and organizations can support specific programs, link their brand to real social impact and receive results reports." },
+  "help.partnership.button": { pt: "Quero ser parceiro", en: "I want to partner" },
   "help.donation.title": { pt: "Doação recorrente", en: "Recurring donation" },
   "help.donation.desc": { pt: "Torne-se um mantenedor com contribuições mensais. Cada real investido é direcionado com transparência para os programas que transformam vidas.", en: "Become a supporter with monthly contributions. Every real invested is directed with transparency to programs that transform lives." },
+  "help.donation.button": { pt: "Quero doar todo mês", en: "I want to donate monthly" },
   "help.material.title": { pt: "Doação de materiais", en: "Material donation" },
   "help.material.desc": { pt: "Alimentos, roupas, itens para gestantes e produtos de higiene são sempre necessários e fazem diferença imediata na vida das famílias.", en: "Food, clothing, items for expectant mothers and hygiene products are always needed and make an immediate difference in families' lives." },
+  "help.material.button": { pt: "Quero doar materiais", en: "I want to donate materials" },
   "help.volunteer.title": { pt: "Voluntariado", en: "Volunteering" },
   "help.volunteer.desc": { pt: "Professores, advogados, nutricionistas e psicólogos podem doar tempo e conhecimento para fortalecer nossos programas.", en: "Teachers, lawyers, nutritionists and psychologists can donate time and knowledge to strengthen our programs." },
+  "help.volunteer.button": { pt: "Quero me voluntariar", en: "I want to volunteer" },
 
   // FinalCTA
-  "cta.title": { pt: "Sua empresa pode transformar a realidade de uma comunidade inteira.", en: "Your company can transform the reality of an entire community." },
+  "cta.title": { pt: "Você pode transformar a realidade de uma comunidade inteira.", en: "You can transform the reality of an entire community." },
   "cta.subtitle": { pt: "Converse com nossa equipe e descubra como sua contribuição — financeira, material ou profissional — pode gerar impacto mensurável.", en: "Talk to our team and discover how your contribution — financial, material or professional — can generate measurable impact." },
   "cta.button": { pt: "Fale com o Instituto Casa", en: "Talk to Instituto Casa" },
 

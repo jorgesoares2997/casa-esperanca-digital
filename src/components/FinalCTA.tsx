@@ -5,7 +5,7 @@ const FinalCTA = () => {
   const { t } = useLanguage();
 
   const openWhatsApp = () => {
-    const phoneNumber = "5581992074377";
+    const phoneNumber = "5581973183247";
     const message = encodeURIComponent(
       "Olá, gostaria de saber mais sobre como apoiar o Instituto Casa."
     );

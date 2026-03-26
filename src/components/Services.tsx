@@ -25,6 +25,7 @@ const Services = () => {
       titleKey: "services.legal.title",
       descKey: "services.legal.desc",
       image: legalImage,
+      waitingProfessionals: true,
     },
     {
       titleKey: "services.nutrition.title",
@@ -87,6 +88,14 @@ const Services = () => {
                 <div className="absolute top-4 right-4">
                   <span className="bg-accent text-accent-foreground text-[11px] font-semibold uppercase tracking-wider px-3 py-1 rounded-full">
                     {t("services.comingSoon")}
+                  </span>
+                </div>
+              )}
+
+              {service.waitingProfessionals && (
+                <div className="absolute top-4 left-4">
+                  <span className="bg-accent text-accent-foreground text-[11px] font-semibold uppercase tracking-wider px-3 py-1 rounded-full">
+                    {t("services.waitingProfessionals")}
                   </span>
                 </div>
               )}
