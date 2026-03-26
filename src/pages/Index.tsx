@@ -8,10 +8,14 @@ import HowToHelp from "@/components/HowToHelp";
 import FinalCTA from "@/components/FinalCTA";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import LanguageToggle from "@/components/LanguageToggle";
+import CursorGlow from "@/components/CursorGlow";
 
 const Index = () => {
   return (
     <div className="min-h-screen">
+      <CursorGlow />
+      <LanguageToggle />
       <Header />
       <main>
         <Hero />

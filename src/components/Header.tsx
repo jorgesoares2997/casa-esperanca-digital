@@ -1,9 +1,11 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { t } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20);
@@ -20,11 +22,11 @@ const Header = () => {
   };
 
   const navItems = [
-    { label: "Início", id: "inicio" },
-    { label: "Quem Somos", id: "quem-somos" },
-    { label: "O que Fazemos", id: "servicos" },
-    { label: "Impacto", id: "impacto" },
-    { label: "Contato", id: "contato" },
+    { label: t("nav.inicio"), id: "inicio" },
+    { label: t("nav.quemSomos"), id: "quem-somos" },
+    { label: t("nav.servicos"), id: "servicos" },
+    { label: t("nav.impacto"), id: "impacto" },
+    { label: t("nav.contato"), id: "contato" },
   ];
 
   return (
