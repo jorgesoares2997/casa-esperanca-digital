@@ -41,7 +41,7 @@ const Hero = () => {
           loop
           muted
           playsInline
-          className="w-full h-full object-cover scale-110"
+          className="w-full h-full object-contain bg-black/20 scale-100 sm:object-cover sm:object-center sm:scale-110"
           aria-hidden="true"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20" />

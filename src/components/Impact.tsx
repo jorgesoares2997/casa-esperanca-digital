@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { ArrowLeft, ArrowRight } from "lucide-react";
 import {
   Carousel,
   CarouselApi,
@@ -13,6 +12,43 @@ const Impact = () => {
   const { t } = useLanguage();
   const [api, setApi] = useState<CarouselApi>();
   const [isPaused, setIsPaused] = useState(false);
+
+  // Ícones "brand" em SVG (cumulam com a paleta do site via cor `primary`).
+  const BrandArrowLeft = () => (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
+      className="h-5 w-5 text-primary"
+    >
+      <path
+        d="M14.8 6.2L8.2 12L14.8 17.8"
+        stroke="currentColor"
+        strokeWidth="3.4"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+
+  const BrandArrowRight = () => (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
+      className="h-5 w-5 text-primary"
+    >
+      <path
+        d="M9.2 6.2L15.8 12L9.2 17.8"
+        stroke="currentColor"
+        strokeWidth="3.4"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
 
   const stats = [
     { number: "500+", labelKey: "impact.families" },
@@ -86,7 +122,7 @@ const Impact = () => {
                 aria-label="Previous testimonial"
                 className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-border bg-background text-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
               >
-                <ArrowLeft className="h-4 w-4" />
+                <BrandArrowLeft />
               </button>
               <button
                 type="button"
@@ -94,7 +130,7 @@ const Impact = () => {
                 aria-label="Next testimonial"
                 className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-border bg-background text-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
               >
-                <ArrowRight className="h-4 w-4" />
+                <BrandArrowRight />
               </button>
             </div>
           </div>
