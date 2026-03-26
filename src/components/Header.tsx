@@ -61,7 +61,7 @@ const Header = () => {
             <img
               src={isDarkTheme ? "/logotipo2.png" : isScrolled ? "/logotipo1.png" : "/logotipo2.png"}
               alt="Instituto Casa"
-              className="h-8 md:h-10 w-auto transition-all duration-300"
+              className="h-[42px] md:h-[52px] w-auto transition-all duration-300"
             />
           </button>
 
