@@ -1,91 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
-
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 210 100% 20%;
+    --foreground: 220 15% 15%;
 
     --card: 0 0% 100%;
-    --card-foreground: 210 100% 20%;
+    --card-foreground: 220 15% 15%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 210 100% 20%;
+    --popover-foreground: 220 15% 15%;
 
-    /* Instituto Casa Brand Colors */
-    --primary: 210 100% 20%; /* Dark Blue #003366 */
+    --primary: 220 60% 18%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 35 100% 48%; /* Orange #F39200 */
+    --secondary: 160 45% 40%;
     --secondary-foreground: 0 0% 100%;
 
-    --accent: 176 100% 33%; /* Aqua Green #00A99D */
+    --accent: 30 80% 55%;
     --accent-foreground: 0 0% 100%;
 
-    --info: 196 100% 47%; /* Light Blue #00AEEF */
-    --info-foreground: 0 0% 100%;
-
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 210 100% 20%;
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 10% 46%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 210 30% 90%;
-    --input: 210 30% 90%;
-    --ring: 210 100% 20%;
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 220 60% 18%;
 
-    --radius: 0.75rem;
+    --radius: 0.5rem;
 
-    /* Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(210 100% 20%) 0%, hsl(196 100% 47%) 100%);
-    --gradient-warm: linear-gradient(135deg, hsl(35 100% 48%) 0%, hsl(176 100% 33%) 100%);
-    --gradient-overlay: linear-gradient(180deg, rgba(0, 51, 102, 0.7) 0%, rgba(0, 51, 102, 0.9) 100%);
-
-    /* Shadows */
-    --shadow-soft: 0 4px 20px rgba(0, 51, 102, 0.08);
-    --shadow-elevated: 0 10px 40px rgba(0, 51, 102, 0.15);
-
-    /* Transitions */
-    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --surface-warm: 35 30% 97%;
   }
 
   .dark {
-    --background: 210 100% 10%;
-    --foreground: 0 0% 98%;
+    --background: 220 20% 8%;
+    --foreground: 0 0% 95%;
 
-    --card: 210 100% 15%;
-    --card-foreground: 0 0% 98%;
+    --card: 220 20% 12%;
+    --card-foreground: 0 0% 95%;
 
-    --popover: 210 100% 15%;
-    --popover-foreground: 0 0% 98%;
+    --popover: 220 20% 12%;
+    --popover-foreground: 0 0% 95%;
 
-    --primary: 196 100% 47%;
-    --primary-foreground: 210 100% 20%;
+    --primary: 160 45% 50%;
+    --primary-foreground: 220 60% 10%;
 
-    --secondary: 35 100% 48%;
+    --secondary: 160 45% 40%;
     --secondary-foreground: 0 0% 100%;
 
-    --accent: 176 100% 33%;
+    --accent: 30 80% 55%;
     --accent-foreground: 0 0% 100%;
 
-    --info: 196 100% 47%;
-    --info-foreground: 0 0% 100%;
-
-    --muted: 210 40% 20%;
-    --muted-foreground: 210 40% 70%;
+    --muted: 220 15% 16%;
+    --muted-foreground: 220 10% 60%;
 
     --destructive: 0 62.8% 40%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 210 40% 25%;
-    --input: 210 40% 25%;
-    --ring: 196 100% 47%;
+    --border: 220 15% 20%;
+    --input: 220 15% 20%;
+    --ring: 160 45% 50%;
+
+    --surface-warm: 220 15% 12%;
   }
 }
 
@@ -95,6 +78,22 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    @apply tracking-tight;
+  }
+}
+
+@layer utilities {
+  .font-serif {
+    font-family: 'Source Serif 4', Georgia, serif;
+  }
+
+  .text-balance {
+    text-wrap: balance;
   }
 }

@@ -1,104 +1,54 @@
-import { Button } from "@/components/ui/button";
-import { DollarSign, Package, Users, Handshake, Heart, ArrowRight } from "lucide-react";
-
 const HowToHelp = () => {
   const ways = [
     {
-      icon: DollarSign,
-      title: "Doação Financeira",
-      description: "Sua contribuição financeira ajuda a manter nossos serviços e expandir nosso alcance na comunidade.",
-      cta: "Doar Agora",
-      color: "secondary",
-      whatsappMsg: "Olá, gostaria de fazer uma doação financeira para o Instituto."
+      title: "Parceria institucional",
+      description:
+        "Empresas e organizações podem apoiar programas específicos, vincular sua marca a impacto social real e receber relatórios de resultados.",
     },
     {
-      icon: Package,
-      title: "Doação de Materiais",
-      description: "Alimentos, roupas, itens para bebê e gestantes e produtos de higiene são sempre bem-vindos.",
-      cta: "Saiba Mais",
-      color: "accent",
-      whatsappMsg: "Olá, gostaria de doar materiais para o Instituto Casa."
+      title: "Doação recorrente",
+      description:
+        "Torne-se um mantenedor com contribuições mensais. Cada real investido é direcionado com transparência para os programas que transformam vidas.",
     },
     {
-      icon: Users,
+      title: "Doação de materiais",
+      description:
+        "Alimentos, roupas, itens para gestantes e produtos de higiene são sempre necessários e fazem diferença imediata na vida das famílias.",
+    },
+    {
       title: "Voluntariado",
-      description: "Doe seu tempo e talentos. Precisamos de professores, advogados, nutricionistas, psicólogos e mais.",
-      cta: "Seja Voluntário",
-      color: "info",
-      whatsappMsg: "Olá, tenho interesse em ser voluntário no Instituto Casa."
+      description:
+        "Professores, advogados, nutricionistas e psicólogos podem doar tempo e conhecimento para fortalecer nossos programas.",
     },
-    {
-      icon: Handshake,
-      title: "Parcerias",
-      description: "Empresas e organizações podem fazer parcerias conosco para projetos específicos.",
-      cta: "Fazer Parceria",
-      color: "primary",
-      whatsappMsg: "Olá, gostaria de firmar uma parceria com o Instituto."
-    }
   ];
 
-  const openWhatsApp = (message: string) => {
-    const phoneNumber = "5581992074377";
-    const encodedMessage = encodeURIComponent(message);
-    window.open(`https://wa.me/${phoneNumber}?text=${encodedMessage}`, '_blank');
-  };
-
   return (
-    <section id="como-ajudar" className="py-20 bg-background">
-      <div className="container mx-auto px-4">
-        <div className="max-w-3xl mx-auto text-center mb-16 animate-fade-in">
-          <div className="inline-flex items-center gap-2 bg-secondary/10 px-4 py-2 rounded-full mb-4">
-            <Heart className="w-4 h-4 text-secondary" fill="currentColor" />
-            <span className="text-sm font-medium text-secondary">Faça a Diferença</span>
-          </div>
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-primary" style={{ fontFamily: 'Poppins, sans-serif' }}>
-            Como Ajudar
+    <section className="py-20 md:py-32 bg-background">
+      <div className="container mx-auto px-4 md:px-8">
+        <div className="max-w-3xl mb-16">
+          <p className="text-sm font-medium tracking-widest uppercase text-muted-foreground mb-6">
+            Como apoiar
+          </p>
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground leading-tight mb-6">
+            Investir em pessoas é a forma mais eficiente de gerar impacto.
           </h2>
           <p className="text-lg text-muted-foreground leading-relaxed">
-            Existem várias formas de contribuir com nossa missão. Cada gesto, por menor que seja,
-            faz uma diferença enorme na vida de quem precisa.
+            Existem diferentes formas de contribuir com a missão do Instituto Casa. 
+            Cada tipo de apoio cumpre um papel essencial na sustentabilidade dos nossos programas.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto mb-16">
+        <div className="grid md:grid-cols-2 gap-x-12 gap-y-10 max-w-5xl">
           {ways.map((way, index) => (
-            <div
-              key={index}
-              className="group bg-card rounded-2xl shadow-soft p-8 hover:shadow-elevated transition-all duration-300 animate-fade-in"
-              style={{ animationDelay: `${index * 0.1}s` }}
-            >
-              <div className={`w-14 h-14 bg-${way.color}/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform`}>
-                <way.icon className={`w-7 h-7 text-${way.color}`} />
-              </div>
-              <h3 className="text-2xl font-bold mb-4 text-primary">{way.title}</h3>
-              <p className="text-muted-foreground leading-relaxed mb-6">{way.description}</p>
-              <Button
-                variant="outline"
-                onClick={() => openWhatsApp(way.whatsappMsg)}
-                className="group/btn"
-              >
-                {way.cta}
-                <ArrowRight className="ml-2 w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
-              </Button>
+            <div key={index} className="border-t border-border pt-6">
+              <h3 className="text-lg font-semibold text-foreground mb-3">
+                {way.title}
+              </h3>
+              <p className="text-muted-foreground leading-relaxed text-[15px]">
+                {way.description}
+              </p>
             </div>
           ))}
-        </div>
-
-        <div className="max-w-4xl mx-auto bg-gradient-hero rounded-2xl p-8 md:p-12 text-center text-white shadow-elevated animate-fade-in">
-          <h3 className="text-3xl font-bold mb-4" style={{ fontFamily: 'Poppins, sans-serif' }}>
-            Transforme Vidas Hoje
-          </h3>
-          <p className="text-lg leading-relaxed mb-8">
-            "Porque tive fome, e me destes de comer; tive sede, e me destes de beber;
-            era forasteiro, e me acolhestes." - Mateus 25:35
-          </p>
-          <Button
-            size="lg"
-            onClick={() => openWhatsApp("Olá, gostaria de entrar em contato com o Instituto.")}
-            className="bg-secondary hover:bg-secondary/90 text-secondary-foreground font-bold text-lg px-8 py-6"
-          >
-            Entre em Contato
-          </Button>
         </div>
       </div>
     </section>
