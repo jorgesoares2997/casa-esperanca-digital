@@ -1,34 +1,41 @@
+import ScrollRevealText from "@/components/ScrollRevealText";
+import { useLanguage } from "@/contexts/LanguageContext";
+
 const Impact = () => {
+  const { t } = useLanguage();
+
   const stats = [
-    { number: "500+", label: "Famílias atendidas" },
-    { number: "200+", label: "Crianças em reforço escolar" },
-    { number: "100+", label: "Mulheres apoiadas" },
-    { number: "150+", label: "Atendimentos jurídicos" },
+    { number: "500+", labelKey: "impact.families" },
+    { number: "200+", labelKey: "impact.children" },
+    { number: "100+", labelKey: "impact.women" },
+    { number: "150+", labelKey: "impact.legal" },
   ];
 
   const testimonials = [
     {
-      text: "O Instituto Casa foi um presente de Deus na minha vida. Durante minha gravidez, encontrei não apenas apoio material, mas amor e compreensão. Hoje sou mãe de um bebê saudável e tenho esperança no futuro.",
-      name: "Maria S.",
-      role: "Mãe assistida pelo programa",
+      textKey: "impact.t1.text",
+      nameKey: "impact.t1.name",
+      roleKey: "impact.t1.role",
     },
     {
-      text: "Meu filho estava com dificuldades na escola e o reforço escolar mudou tudo. Hoje ele é um dos melhores alunos da turma. Sou eternamente grato pela dedicação dos professores.",
-      name: "João P.",
-      role: "Pai de aluno do reforço escolar",
+      textKey: "impact.t2.text",
+      nameKey: "impact.t2.name",
+      roleKey: "impact.t2.role",
     },
   ];
 
   return (
-    <section id="impacto" className="py-20 md:py-32 bg-muted/50">
+    <section id="impacto" className="py-24 md:py-40 bg-muted/50">
       <div className="container mx-auto px-4 md:px-8">
-        <div className="max-w-3xl mb-16">
-          <p className="text-sm font-medium tracking-widest uppercase text-muted-foreground mb-6">
-            Nosso impacto
+        <div className="max-w-4xl mb-20">
+          <p className="text-sm font-medium tracking-widest uppercase text-muted-foreground mb-8">
+            {t("impact.tag")}
           </p>
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground leading-tight">
-            Números que representam vidas transformadas.
-          </h2>
+          <ScrollRevealText
+            text={t("impact.title")}
+            as="h2"
+            className="text-3xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight text-balance"
+          />
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 mb-20">
@@ -37,24 +44,24 @@ const Impact = () => {
               <div className="text-4xl md:text-5xl font-bold text-secondary mb-2">
                 {stat.number}
               </div>
-              <div className="text-sm text-muted-foreground">{stat.label}</div>
+              <div className="text-sm text-muted-foreground">{t(stat.labelKey)}</div>
             </div>
           ))}
         </div>
 
         <div className="border-t border-border pt-16">
           <p className="text-sm font-medium tracking-widest uppercase text-muted-foreground mb-10">
-            Depoimentos
+            {t("impact.testimonials")}
           </p>
           <div className="grid md:grid-cols-2 gap-12">
-            {testimonials.map((t, index) => (
+            {testimonials.map((testimonial, index) => (
               <blockquote key={index} className="space-y-6">
                 <p className="text-lg md:text-xl text-foreground leading-relaxed font-serif italic">
-                  "{t.text}"
+                  "{t(testimonial.textKey)}"
                 </p>
                 <footer>
-                  <p className="font-semibold text-foreground text-sm">{t.name}</p>
-                  <p className="text-muted-foreground text-sm">{t.role}</p>
+                  <p className="font-semibold text-foreground text-sm">{t(testimonial.nameKey)}</p>
+                  <p className="text-muted-foreground text-sm">{t(testimonial.roleKey)}</p>
                 </footer>
               </blockquote>
             ))}

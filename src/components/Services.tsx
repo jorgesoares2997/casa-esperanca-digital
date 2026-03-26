@@ -1,33 +1,53 @@
-import pregnantImage from "@/assets/pregnant-support.jpg";
-import schoolImage from "@/assets/school-support.jpg";
-import nutritionImage from "@/assets/nutrition.jpg";
-import legalImage from "@/assets/legal-aid.jpg";
+import { useLanguage } from "@/contexts/LanguageContext";
+import pregnantImage from "@/assets/service-pregnant.jpg";
+import schoolImage from "@/assets/service-school.jpg";
+import nutritionImage from "@/assets/service-nutrition.jpg";
+import legalImage from "@/assets/service-legal.jpg";
+import psychologyImage from "@/assets/service-psychology.jpg";
+import physioImage from "@/assets/service-physio.jpg";
+import nursingImage from "@/assets/service-nursing.jpg";
 
 const Services = () => {
+  const { t } = useLanguage();
+
   const services = [
     {
-      title: "Apoio a Gestantes",
-      description:
-        "Acompanhamento integral durante a gestação para mulheres em situação de vulnerabilidade — suporte emocional, orientação e recursos para um período seguro.",
+      titleKey: "services.pregnant.title",
+      descKey: "services.pregnant.desc",
       image: pregnantImage,
     },
     {
-      title: "Reforço Escolar",
-      description:
-        "Educação complementar para crianças e adolescentes da comunidade, com foco no desenvolvimento integral e na construção de um futuro com mais oportunidades.",
+      titleKey: "services.school.title",
+      descKey: "services.school.desc",
       image: schoolImage,
     },
     {
-      title: "Assistência Jurídica",
-      description:
-        "Orientação legal gratuita para garantir acesso à justiça e defesa de direitos fundamentais para quem não pode pagar por um advogado.",
+      titleKey: "services.legal.title",
+      descKey: "services.legal.desc",
       image: legalImage,
     },
     {
-      title: "Nutrição e Saúde",
-      description:
-        "Acompanhamento nutricional e educação alimentar para promover saúde e bem-estar em todas as fases da vida, além de apoio a quem aguarda atendimento em postos de saúde.",
+      titleKey: "services.nutrition.title",
+      descKey: "services.nutrition.desc",
       image: nutritionImage,
+    },
+    {
+      titleKey: "services.psychology.title",
+      descKey: "services.psychology.desc",
+      image: psychologyImage,
+    },
+    {
+      titleKey: "services.physio.title",
+      descKey: "services.physio.desc",
+      image: physioImage,
+      comingSoon: true,
+    },
+    {
+      titleKey: "services.nursing.title",
+      descKey: "services.nursing.desc",
+      image: nursingImage,
+      comingSoon: true,
+      subtitle: t("services.prenatal"),
     },
   ];
 
@@ -36,31 +56,52 @@ const Services = () => {
       <div className="container mx-auto px-4 md:px-8">
         <div className="max-w-3xl mb-16">
           <p className="text-sm font-medium tracking-widest uppercase text-muted-foreground mb-6">
-            O que fazemos
+            {t("services.tag")}
           </p>
           <h2 className="text-3xl md:text-4xl font-bold text-foreground leading-tight">
-            Programas que transformam a realidade da comunidade.
+            {t("services.title")}
           </h2>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((service, index) => (
             <div
               key={index}
-              className="group relative overflow-hidden rounded-lg aspect-[4/3]"
+              className={`group relative overflow-hidden rounded-lg aspect-[4/3] ${
+                index < 2 ? "lg:col-span-1" : ""
+              }`}
             >
               <img
                 src={service.image}
-                alt={service.title}
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                alt={t(service.titleKey)}
+                loading="lazy"
+                width={800}
+                height={600}
+                className={`w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 ${
+                  service.comingSoon ? "grayscale-[30%]" : ""
+                }`}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
+              
+              {service.comingSoon && (
+                <div className="absolute top-4 right-4">
+                  <span className="bg-accent text-accent-foreground text-[11px] font-semibold uppercase tracking-wider px-3 py-1 rounded-full">
+                    {t("services.comingSoon")}
+                  </span>
+                </div>
+              )}
+
               <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
-                <h3 className="text-xl md:text-2xl font-bold text-white mb-2">
-                  {service.title}
+                <h3 className="text-xl md:text-2xl font-bold text-white mb-1">
+                  {t(service.titleKey)}
                 </h3>
-                <p className="text-white/70 text-sm md:text-base leading-relaxed max-w-md">
-                  {service.description}
+                {service.subtitle && (
+                  <p className="text-white/50 text-xs font-medium uppercase tracking-wider mb-2">
+                    {service.subtitle}
+                  </p>
+                )}
+                <p className="text-white/70 text-sm md:text-base leading-relaxed max-w-md opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                  {t(service.descKey)}
                 </p>
               </div>
             </div>

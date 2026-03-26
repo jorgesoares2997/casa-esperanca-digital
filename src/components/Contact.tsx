@@ -1,6 +1,9 @@
 import { Mail, MapPin, Phone, Clock, Instagram } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Contact = () => {
+  const { t } = useLanguage();
+
   const contactInfo = [
     { icon: Mail, label: "oinstitutocasa@gmail.com" },
     { icon: Phone, label: "(81) 3476-1274" },
@@ -13,10 +16,10 @@ const Contact = () => {
       <div className="container mx-auto px-4 md:px-8">
         <div className="max-w-3xl">
           <p className="text-sm font-medium tracking-widest uppercase text-muted-foreground mb-6">
-            Contato
+            {t("contact.tag")}
           </p>
           <h2 className="text-3xl md:text-4xl font-bold text-foreground leading-tight mb-10">
-            Estamos abertos ao diálogo.
+            {t("contact.title")}
           </h2>
           <div className="space-y-5 mb-10">
             {contactInfo.map((info, index) => (
