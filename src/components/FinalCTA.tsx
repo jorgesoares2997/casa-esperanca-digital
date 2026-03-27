@@ -1,6 +1,7 @@
 import { ArrowRight } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { ChevronGrid, LCornerGrid, ChevronDivider, BRAND } from "@/components/BrandPatterns";
+import logoIcon from "@/assets/logo-icon.png";
 
 const FinalCTA = () => {
   const { t } = useLanguage();
