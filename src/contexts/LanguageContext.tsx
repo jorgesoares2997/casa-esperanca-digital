@@ -18,6 +18,7 @@ const translations: Translations = {
   "hero.location": { pt: "Prazeres · Jaboatão dos Guararapes · PE", en: "Prazeres · Jaboatão dos Guararapes · PE" },
   "hero.title": { pt: "Onde a esperança encontra quem mais precisa.", en: "Where hope meets those who need it most." },
   "hero.subtitle": { pt: "Assistência social, acolhimento e dignidade para famílias em situação de vulnerabilidade.", en: "Social assistance, shelter and dignity for vulnerable families." },
+  "hero.loading": { pt: "Carregando…", en: "Loading…" },
 
   // Problem
   "problem.tag": { pt: "A realidade", en: "The reality" },
