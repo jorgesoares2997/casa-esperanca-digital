@@ -1,4 +1,5 @@
 import { useLanguage } from "@/contexts/LanguageContext";
+import { ChevronGrid } from "@/components/BrandPatterns";
 
 const HowToHelp = () => {
   const { t } = useLanguage();
@@ -37,8 +38,13 @@ const HowToHelp = () => {
   };
 
   return (
-    <section className="py-20 md:py-32 bg-background">
-      <div className="container mx-auto px-4 md:px-8">
+    <section className="relative py-20 md:py-32 bg-background overflow-hidden">
+      {/* Subtle brand pattern */}
+      <div className="absolute top-1/2 -translate-y-1/2 right-4 md:right-12 opacity-[0.03]">
+        <ChevronGrid className="w-48 md:w-64" variant="teal" />
+      </div>
+
+      <div className="container mx-auto px-4 md:px-8 relative z-10">
         <div className="max-w-3xl mb-16">
           <p className="text-sm font-medium tracking-widest uppercase text-muted-foreground mb-6">
             {t("help.tag")}

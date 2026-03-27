@@ -7,20 +7,21 @@ import {
 } from "@/components/ui/carousel";
 import ScrollRevealText from "@/components/ScrollRevealText";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { ChevronGrid, BRAND } from "@/components/BrandPatterns";
 
 const Impact = () => {
   const { t } = useLanguage();
   const [api, setApi] = useState<CarouselApi>();
   const [isPaused, setIsPaused] = useState(false);
 
-  // Ícones "brand" em SVG (cumulam com a paleta do site via cor `primary`).
+  // Brand orange chevron arrows for carousel
   const BrandArrowLeft = () => (
     <svg
       viewBox="0 0 24 24"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       aria-hidden="true"
-      className="h-5 w-5 text-[#F59E0B]"
+      className="h-5 w-5"
     >
       <path
         d="M14.8 6.2L8.2 12L14.8 17.8"
@@ -38,7 +39,7 @@ const Impact = () => {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       aria-hidden="true"
-      className="h-5 w-5 text-[#F59E0B]"
+      className="h-5 w-5"
     >
       <path
         d="M9.2 6.2L15.8 12L9.2 17.8"
@@ -86,8 +87,13 @@ const Impact = () => {
   }, [api, testimonials.length, isPaused]);
 
   return (
-    <section id="impacto" className="py-24 md:py-40 bg-muted/50">
-      <div className="container mx-auto px-4 md:px-8">
+    <section id="impacto" className="relative py-24 md:py-40 bg-muted/50 overflow-hidden">
+      {/* Decorative brand pattern - top right */}
+      <div className="absolute top-8 right-8 md:top-12 md:right-12 opacity-[0.06]">
+        <ChevronGrid className="w-32 md:w-48" variant="navy" />
+      </div>
+
+      <div className="container mx-auto px-4 md:px-8 relative z-10">
         <div className="max-w-4xl mb-20">
           <p className="text-sm font-medium tracking-widest uppercase text-muted-foreground mb-8">
             {t("impact.tag")}
@@ -120,7 +126,7 @@ const Impact = () => {
                 type="button"
                 onClick={() => api?.scrollPrev()}
                 aria-label="Previous testimonial"
-                className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-[#F59E0B] bg-background text-[#F59E0B] transition-colors hover:bg-accent hover:text-accent-foreground"
+                className="inline-flex h-10 w-10 items-center justify-center rounded-md border-2 border-accent bg-background text-accent transition-colors hover:bg-accent hover:text-accent-foreground"
               >
                 <BrandArrowLeft />
               </button>
@@ -128,7 +134,7 @@ const Impact = () => {
                 type="button"
                 onClick={() => api?.scrollNext()}
                 aria-label="Next testimonial"
-                className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-[#F59E0B] bg-background text-[#F59E0B] transition-colors hover:bg-accent hover:text-accent-foreground"
+                className="inline-flex h-10 w-10 items-center justify-center rounded-md border-2 border-accent bg-background text-accent transition-colors hover:bg-accent hover:text-accent-foreground"
               >
                 <BrandArrowRight />
               </button>

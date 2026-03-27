@@ -1,4 +1,5 @@
 import { useLanguage } from "@/contexts/LanguageContext";
+import { LCornerGrid, ChevronDivider, ChevronRight, BRAND } from "@/components/BrandPatterns";
 import pregnantImage from "@/assets/service-pregnant.jpg";
 import schoolImage from "@/assets/service-school.jpg";
 import nutritionImage from "@/assets/service-nutrition.jpg";
@@ -53,15 +54,34 @@ const Services = () => {
   ];
 
   return (
-    <section id="servicos" className="py-20 md:py-32 bg-background">
-      <div className="container mx-auto px-4 md:px-8">
+    <section id="servicos" className="relative py-20 md:py-32 bg-primary overflow-hidden">
+      {/* Brand L-corner pattern background — subtle watermark */}
+      <div className="absolute top-0 right-0 w-72 md:w-[28rem] opacity-[0.04]">
+        <LCornerGrid />
+      </div>
+      <div className="absolute bottom-0 left-0 w-56 md:w-80 opacity-[0.04] rotate-180">
+        <LCornerGrid />
+      </div>
+
+      {/* Decorative chevron row */}
+      <div className="absolute top-6 left-8 md:left-12 opacity-20">
+        <div className="flex gap-2">
+          {Array.from({ length: 4 }).map((_, i) => (
+            <ChevronRight key={i} className="w-4 h-6" color={BRAND.orange} />
+          ))}
+        </div>
+      </div>
+
+      <div className="container mx-auto px-4 md:px-8 relative z-10">
         <div className="max-w-3xl mb-16">
-          <p className="text-sm font-medium tracking-widest uppercase text-muted-foreground mb-6">
+          <p className="text-sm font-medium tracking-widest uppercase text-primary-foreground/50 mb-6">
             {t("services.tag")}
           </p>
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground leading-tight">
+          <h2 className="text-3xl md:text-4xl font-bold text-primary-foreground leading-tight">
             {t("services.title")}
           </h2>
+          {/* Brand chevron divider */}
+          <ChevronDivider className="mt-6 opacity-60" color={BRAND.orange} />
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
