@@ -1,5 +1,6 @@
 import { useLanguage } from "@/contexts/LanguageContext";
 import { ChevronRight, BRAND } from "@/components/BrandPatterns";
+import logoCircular from "@/assets/logo-circular.png";
 
 const About = () => {
   const { t } = useLanguage();
