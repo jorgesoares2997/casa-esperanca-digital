@@ -27,6 +27,10 @@ const FinalCTA = () => {
       <div className="absolute top-6 right-8 opacity-20">
         <ChevronDivider color={BRAND.orange} />
       </div>
+      {/* Logo icon watermark */}
+      <div className="absolute bottom-12 left-12 opacity-[0.08]">
+        <img src={logoIcon} alt="" aria-hidden="true" className="w-20 md:w-28" />
+      </div>
 
       <div className="container mx-auto px-4 md:px-8 text-center relative z-10">
         <div className="max-w-2xl mx-auto">
