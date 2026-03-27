@@ -1,5 +1,6 @@
 import { useLanguage } from "@/contexts/LanguageContext";
 import { ChevronDivider, BRAND } from "@/components/BrandPatterns";
+import logoIcon from "@/assets/logo-icon.png";
 
 const Footer = () => {
   const { t } = useLanguage();
@@ -13,9 +14,12 @@ const Footer = () => {
       </div>
 
       <div className="container mx-auto px-4 md:px-8 flex flex-col md:flex-row justify-between items-center gap-4">
-        <p className="text-sm text-muted-foreground">
-          © {currentYear} Instituto Casa. {t("footer.rights")}
-        </p>
+        <div className="flex items-center gap-3">
+          <img src={logoIcon} alt="Instituto Casa" className="w-8 h-8 opacity-60" />
+          <p className="text-sm text-muted-foreground">
+            © {currentYear} Instituto Casa. {t("footer.rights")}
+          </p>
+        </div>
         <p className="text-sm text-muted-foreground">
           CNPJ: 60.785.922/0001-83 · Jaboatão dos Guararapes – PE
         </p>

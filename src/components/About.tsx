@@ -1,5 +1,6 @@
 import { useLanguage } from "@/contexts/LanguageContext";
 import { ChevronRight, BRAND } from "@/components/BrandPatterns";
+import logoCircular from "@/assets/logo-circular.png";
 
 const About = () => {
   const { t } = useLanguage();
@@ -11,6 +12,10 @@ const About = () => {
         {Array.from({ length: 3 }).map((_, i) => (
           <ChevronRight key={i} className="w-8 h-12" color={BRAND.orange} />
         ))}
+      </div>
+      {/* Circular logo watermark */}
+      <div className="absolute bottom-8 left-8 md:bottom-12 md:left-12 opacity-[0.04]">
+        <img src={logoCircular} alt="" aria-hidden="true" className="w-32 md:w-48" />
       </div>
 
       <div className="container mx-auto px-4 md:px-8 relative z-10">

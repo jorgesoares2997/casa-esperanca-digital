@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { ChevronGrid, LCornerGrid, ChevronUp, ChevronDown, ChevronRight } from "@/components/BrandPatterns";
+import logoIcon from "@/assets/logo-icon.png";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const Hero = () => {
@@ -126,6 +127,7 @@ const Hero = () => {
 
         {/* Center content */}
         <div className="relative flex flex-col items-center gap-6">
+          <img src={logoIcon} alt="Instituto Casa" className="w-16 h-16 md:w-20 md:h-20 animate-pulse" />
           <div className="flex items-center gap-3">
             <ChevronRight className="w-6 h-8 animate-pulse" color="hsl(var(--accent))" />
             <ChevronRight className="w-6 h-8 animate-pulse [animation-delay:150ms]" color="hsl(24.7 100% 50% / 0.6)" />
