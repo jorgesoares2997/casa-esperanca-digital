@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { Loader2 } from "lucide-react";
+import { ChevronGrid, LCornerGrid, ChevronUp, ChevronDown, ChevronRight } from "@/components/BrandPatterns";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const Hero = () => {
