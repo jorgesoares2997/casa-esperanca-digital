@@ -19,7 +19,7 @@ const About = () => {
           src={logoCircular}
           alt=""
           aria-hidden="true"
-          className="w-32 md:w-48 dark:brightness-0 dark:invert"
+          className="w-32 md:w-48 opacity-30 dark:brightness-0 dark:invert"
         />
       </div>
 

@@ -18,7 +18,7 @@ const Footer = () => {
           <img
             src={logoIcon}
             alt="Instituto Casa"
-            className="w-8 h-8 dark:brightness-0 dark:invert"
+            className=" h-8 dark:brightness-0 dark:invert"
           />
           <p className="text-sm text-muted-foreground">
             © {currentYear} Instituto Casa. {t("footer.rights")}
