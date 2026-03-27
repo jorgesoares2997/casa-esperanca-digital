@@ -1,5 +1,6 @@
 import { useLanguage } from "@/contexts/LanguageContext";
 import { ChevronDivider, BRAND } from "@/components/BrandPatterns";
+import logoIcon from "@/assets/logo-icon.png";
 
 const Footer = () => {
   const { t } = useLanguage();
