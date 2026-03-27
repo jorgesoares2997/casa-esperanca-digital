@@ -11,7 +11,7 @@ const Footer = () => {
           © {currentYear} Instituto Casa. {t("footer.rights")}
         </p>
         <p className="text-sm text-muted-foreground">
-          CNPJ: 00.000.000/0001-00 · Jaboatão dos Guararapes – PE
+          CNPJ: 60.785.922/0001-83 · Jaboatão dos Guararapes – PE
         </p>
       </div>
     </footer>
