@@ -11,6 +11,7 @@ import {
   ChevronDivider,
   BRAND,
 } from "@/components/BrandPatterns";
+import logoCircular from "@/assets/logo-circular.png";
 
 const NotFound = () => {
   const location = useLocation();
