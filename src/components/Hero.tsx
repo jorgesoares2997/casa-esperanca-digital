@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { Loader2 } from "lucide-react";
+import { ChevronGrid, LCornerGrid, ChevronUp, ChevronDown, ChevronRight } from "@/components/BrandPatterns";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const Hero = () => {
@@ -104,14 +104,37 @@ const Hero = () => {
       </div>
 
       <div
-        className={`absolute inset-0 z-50 flex flex-col items-center justify-center gap-4 bg-primary transition-opacity duration-500 ${
+        className={`absolute inset-0 z-50 flex flex-col items-center justify-center bg-primary transition-opacity duration-700 ${
           isVideoReady ? "pointer-events-none opacity-0" : "opacity-100"
         }`}
         aria-live="polite"
         aria-busy={!isVideoReady}
       >
-        <Loader2 className="h-10 w-10 animate-spin text-primary-foreground" aria-hidden />
-        <p className="text-sm font-medium tracking-wide text-primary-foreground/90">{t("hero.loading")}</p>
+        {/* Brand pattern watermarks */}
+        <div className="absolute top-8 left-8 opacity-10">
+          <ChevronGrid className="w-28 md:w-40" variant="mixed" />
+        </div>
+        <div className="absolute bottom-8 right-8 opacity-10">
+          <LCornerGrid className="w-28 md:w-40" />
+        </div>
+        <div className="absolute top-12 right-12 opacity-[0.07]">
+          <ChevronUp className="w-16 md:w-24" color="hsl(var(--accent))" />
+        </div>
+        <div className="absolute bottom-12 left-12 opacity-[0.07]">
+          <ChevronDown className="w-16 md:w-24" color="hsl(var(--accent))" />
+        </div>
+
+        {/* Center content */}
+        <div className="relative flex flex-col items-center gap-6">
+          <div className="flex items-center gap-3">
+            <ChevronRight className="w-6 h-8 animate-pulse" color="hsl(var(--accent))" />
+            <ChevronRight className="w-6 h-8 animate-pulse [animation-delay:150ms]" color="hsl(24.7 100% 50% / 0.6)" />
+            <ChevronRight className="w-6 h-8 animate-pulse [animation-delay:300ms]" color="hsl(24.7 100% 50% / 0.3)" />
+          </div>
+          <p className="text-sm font-medium tracking-widest uppercase text-primary-foreground/80">
+            {t("hero.loading")}
+          </p>
+        </div>
       </div>
     </section>
   );
