@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { ChevronGrid, LCornerGrid, ChevronUp, ChevronDown, ChevronRight } from "@/components/BrandPatterns";
+import logoIcon from "@/assets/logo-icon.png";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const Hero = () => {
