@@ -1,11 +1,19 @@
 import { useLanguage } from "@/contexts/LanguageContext";
+import { ChevronRight, BRAND } from "@/components/BrandPatterns";
 
 const About = () => {
   const { t } = useLanguage();
 
   return (
-    <section id="quem-somos" className="py-20 md:py-32 bg-muted/50">
-      <div className="container mx-auto px-4 md:px-8">
+    <section id="quem-somos" className="relative py-20 md:py-32 bg-muted/50 overflow-hidden">
+      {/* Decorative brand chevrons */}
+      <div className="absolute top-12 right-8 md:right-16 opacity-[0.06] flex gap-3">
+        {Array.from({ length: 3 }).map((_, i) => (
+          <ChevronRight key={i} className="w-8 h-12" color={BRAND.orange} />
+        ))}
+      </div>
+
+      <div className="container mx-auto px-4 md:px-8 relative z-10">
         <div className="grid md:grid-cols-2 gap-16 items-start max-w-5xl mx-auto">
           <div>
             <p className="text-sm font-medium tracking-widest uppercase text-muted-foreground mb-6">
