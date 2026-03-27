@@ -46,6 +46,7 @@ const Header = () => {
     { label: t("nav.impacto"), id: "impacto" },
     { label: t("nav.contato"), id: "contato" },
   ];
+  const useLogo2 = isDarkTheme || !isScrolled;
 
   return (
     <header
@@ -59,9 +60,11 @@ const Header = () => {
         <div className="flex items-center justify-between h-16 md:h-20">
           <button onClick={() => scrollToSection("inicio")} className="flex items-center">
             <img
-              src={isDarkTheme ? "/logotipo2.png" : isScrolled ? "/logotipo1.png" : "/logotipo2.png"}
+              src={useLogo2 ? "/logotipo2.png" : "/logotipo1.png"}
               alt="Instituto Casa"
-              className="h-[42px] md:h-[52px] w-auto transition-all duration-300"
+              className={`h-[42px] md:h-[52px] w-auto transition-all duration-300 origin-left ${
+                useLogo2 ? "scale-[1.14]" : "scale-100"
+              }`}
             />
           </button>
 

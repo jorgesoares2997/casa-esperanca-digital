@@ -54,17 +54,20 @@ const Services = () => {
   ];
 
   return (
-    <section id="servicos" className="relative py-20 md:py-32 bg-primary overflow-hidden">
+    <section
+      id="servicos"
+      className="relative py-20 md:py-32 bg-[#f6f6f6] dark:bg-[#06103a] overflow-hidden transition-colors duration-500"
+    >
       {/* Brand L-corner pattern background — subtle watermark */}
-      <div className="absolute top-0 right-0 w-72 md:w-[28rem] opacity-[0.04]">
+      <div className="absolute top-0 right-0 w-72 md:w-[28rem] opacity-[0.04] dark:opacity-[0.08]">
         <LCornerGrid />
       </div>
-      <div className="absolute bottom-0 left-0 w-56 md:w-80 opacity-[0.04] rotate-180">
+      <div className="absolute bottom-0 left-0 w-56 md:w-80 opacity-[0.04] dark:opacity-[0.08] rotate-180">
         <LCornerGrid />
       </div>
 
       {/* Decorative chevron row */}
-      <div className="absolute top-6 left-8 md:left-12 opacity-20">
+      <div className="absolute top-6 left-8 md:left-12 opacity-20 dark:opacity-35">
         <div className="flex gap-2">
           {Array.from({ length: 4 }).map((_, i) => (
             <ChevronRight key={i} className="w-4 h-6" color={BRAND.orange} />
@@ -74,14 +77,14 @@ const Services = () => {
 
       <div className="container mx-auto px-4 md:px-8 relative z-10">
         <div className="max-w-3xl mb-16">
-          <p className="text-sm font-medium tracking-widest uppercase text-primary-foreground/50 mb-6">
+          <p className="text-sm font-medium tracking-widest uppercase text-[#001A72]/50 dark:text-[#49C5B1]/80 mb-6">
             {t("services.tag")}
           </p>
-          <h2 className="text-3xl md:text-4xl font-bold text-primary-foreground leading-tight">
+          <h2 className="text-3xl md:text-4xl font-bold text-[#001A72] dark:text-[#e9eeff] leading-tight">
             {t("services.title")}
           </h2>
           {/* Brand chevron divider */}
-          <ChevronDivider className="mt-6 opacity-60" color={BRAND.orange} />
+          <ChevronDivider className="mt-6 opacity-60 dark:opacity-90" color={BRAND.orange} />
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -90,7 +93,7 @@ const Services = () => {
               key={index}
               className={`group relative overflow-hidden rounded-lg aspect-[4/3] ${
                 index < 2 ? "lg:col-span-1" : ""
-              }`}
+              } dark:ring-1 dark:ring-white/10 dark:shadow-[0_8px_30px_rgba(0,0,0,0.35)]`}
             >
               <img
                 src={service.image}
@@ -102,7 +105,7 @@ const Services = () => {
                   service.comingSoon ? "grayscale-[30%]" : ""
                 }`}
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent dark:from-black/90 dark:via-black/45 dark:to-black/10" />
               
               {service.comingSoon && (
                 <div className="absolute top-4 right-4">
