@@ -29,7 +29,12 @@ const FinalCTA = () => {
       </div>
       {/* Logo icon watermark */}
       <div className="absolute bottom-12 left-12 ">
-        <img src={logoIcon} alt="" aria-hidden="true" className="w-20 md:w-28" />
+        <img
+          src={logoIcon}
+          alt=""
+          aria-hidden="true"
+          className="w-20 md:w-28 brightness-0 invert"
+        />
       </div>
 
       <div className="container mx-auto px-4 md:px-8 text-center relative z-10">

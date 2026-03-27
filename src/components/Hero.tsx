@@ -1,20 +1,21 @@
 import { useEffect, useRef, useState } from "react";
 import { ChevronGrid, LCornerGrid, ChevronUp, ChevronDown, ChevronRight } from "@/components/BrandPatterns";
-import logoIcon from "@/assets/logo-icon.png";
+import logoIcon from "@/assets/logo-circular.png";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const Hero = () => {
   const { t } = useLanguage();
-  const videoUrl = "https://port-bu.s3.eu-north-1.amazonaws.com/gerandoamor.mov";
+  const videoUrlDesktop = "https://port-bu.s3.eu-north-1.amazonaws.com/gerandoamor.mov";
   const videoUrlMobile = "https://port-bu.s3.eu-north-1.amazonaws.com/gerandoamormobile.mov";
   const [showHeroText, setShowHeroText] = useState(false);
-  const [isVideoReady, setIsVideoReady] = useState(false);
+  const [isMobile, setIsMobile] = useState(() =>
+    typeof window !== "undefined" ? window.matchMedia("(max-width: 639px)").matches : false,
+  );
+  const [isDesktopReady, setIsDesktopReady] = useState(false);
+  const [isMobileReady, setIsMobileReady] = useState(false);
   const topSentinelRef = useRef<HTMLDivElement | null>(null);
-  const videoRef = useRef<HTMLVideoElement | null>(null);
-
-  const handleVideoReady = () => {
-    setIsVideoReady(true);
-  };
+  const desktopVideoRef = useRef<HTMLVideoElement | null>(null);
+  const mobileVideoRef = useRef<HTMLVideoElement | null>(null);
 
   useEffect(() => {
     const el = topSentinelRef.current;
@@ -40,37 +41,65 @@ const Hero = () => {
     return () => observer.disconnect();
   }, []);
 
+  useEffect(() => {
+    const mq = window.matchMedia("(max-width: 639px)");
+    const onChange = () => setIsMobile(mq.matches);
+    onChange();
+    mq.addEventListener("change", onChange);
+    return () => mq.removeEventListener("change", onChange);
+  }, []);
+
   // Se o vídeo já estiver em cache (buffer suficiente), pode disparar antes do mount do listener
   useEffect(() => {
-    const el = videoRef.current;
-    if (!el) return;
-    if (el.readyState >= 3) {
-      setIsVideoReady(true);
-    }
+    const d = desktopVideoRef.current;
+    const m = mobileVideoRef.current;
+    if (d?.readyState && d.readyState >= 3) setIsDesktopReady(true);
+    if (m?.readyState && m.readyState >= 3) setIsMobileReady(true);
   }, []);
+
+  const isVideoReady = isMobile ? isMobileReady : isDesktopReady;
 
   return (
     <section id="inicio" className="relative min-h-[100vh] flex items-end overflow-hidden">
       <div ref={topSentinelRef} className="absolute top-0 left-0 right-0 h-1 pointer-events-none" />
       <div className="absolute inset-0 z-0">
-        <video
-          ref={videoRef}
-          autoPlay
-          loop
-          muted
-          playsInline
-          preload="auto"
-          className={`w-full h-full object-cover object-center scale-110 transition-opacity duration-500 ${
-            isVideoReady ? "opacity-100" : "opacity-0"
-          }`}
-          aria-hidden="true"
-          onLoadedData={handleVideoReady}
-          onCanPlay={handleVideoReady}
-          onError={() => setIsVideoReady(true)}
-        >
-          <source src={videoUrlMobile} type="video/quicktime" media="(max-width: 639px)" />
-          <source src={videoUrl} type="video/quicktime" />
-        </video>
+        {isMobile ? (
+          <video
+            ref={mobileVideoRef}
+            autoPlay
+            loop
+            muted
+            playsInline
+            preload="auto"
+            className={`w-full h-full object-cover object-center scale-110 transition-opacity duration-500 ${
+              isMobileReady ? "opacity-100" : "opacity-0"
+            }`}
+            aria-hidden="true"
+            onLoadedData={() => setIsMobileReady(true)}
+            onCanPlay={() => setIsMobileReady(true)}
+            onError={() => setIsMobileReady(true)}
+          >
+            <source src={videoUrlMobile} type="video/quicktime" />
+          </video>
+        ) : (
+          <video
+            ref={desktopVideoRef}
+            autoPlay
+            loop
+            muted
+            playsInline
+            preload="auto"
+            className={`w-full h-full object-cover object-center scale-110 transition-opacity duration-500 ${
+              isDesktopReady ? "opacity-100" : "opacity-0"
+            }`}
+            aria-hidden="true"
+            onLoadedData={() => setIsDesktopReady(true)}
+            onCanPlay={() => setIsDesktopReady(true)}
+            onError={() => setIsDesktopReady(true)}
+          >
+            <source src={videoUrlDesktop} type="video/quicktime" />
+          </video>
+        )}
         <div
           className={`absolute inset-0 z-10 bg-gradient-to-t from-black/80 via-black/40 to-black/20 transition-opacity duration-500 ${
             isVideoReady ? "opacity-100" : "opacity-0"
@@ -127,7 +156,11 @@ const Hero = () => {
 
         {/* Center content */}
         <div className="relative flex flex-col items-center gap-6">
-          <img src={logoIcon} alt="Instituto Casa" className="w-16 h-16 md:w-20 md:h-20 animate-pulse" />
+          <img
+            src={logoIcon}
+            alt="Instituto Casa"
+            className="w-full h-full object-contain animate-pulse brightness-0 invert"
+          />
           <div className="flex items-center gap-3">
             <ChevronRight className="w-6 h-8 animate-pulse" color="hsl(var(--accent))" />
             <ChevronRight className="w-6 h-8 animate-pulse [animation-delay:150ms]" color="hsl(24.7 100% 50% / 0.6)" />

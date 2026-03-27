@@ -47,7 +47,11 @@ const NotFound = () => {
       <div className="relative z-10 text-center px-6">
         {/* Circular logo above 404 */}
         <div className="flex justify-center mb-8">
-          <img src={logoCircular} alt="Instituto Casa" className="w-28 md:w-36 opacity-90 brightness-200 " />
+          <img
+            src={logoCircular}
+            alt="Instituto Casa"
+            className="w-28 md:w-36 opacity-90 brightness-200 dark:brightness-0 dark:invert"
+          />
         </div>
         {/* 404 number with brand accent */}
         <div className="flex items-center justify-center gap-4 mb-6">
