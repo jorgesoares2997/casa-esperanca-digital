@@ -28,7 +28,7 @@ const FinalCTA = () => {
         <ChevronDivider color={BRAND.orange} />
       </div>
       {/* Logo icon watermark */}
-      <div className="absolute bottom-12 left-12 opacity-[0.08]">
+      <div className="absolute bottom-12 left-12 ">
         <img src={logoIcon} alt="" aria-hidden="true" className="w-20 md:w-28" />
       </div>
 

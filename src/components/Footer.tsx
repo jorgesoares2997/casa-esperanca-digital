@@ -1,6 +1,6 @@
 import { useLanguage } from "@/contexts/LanguageContext";
 import { ChevronDivider, BRAND } from "@/components/BrandPatterns";
-import logoIcon from "@/assets/logo-icon.png";
+import logoIcon from "@/assets/logo-circular.png";
 
 const Footer = () => {
   const { t } = useLanguage();
@@ -15,7 +15,7 @@ const Footer = () => {
 
       <div className="container mx-auto px-4 md:px-8 flex flex-col md:flex-row justify-between items-center gap-4">
         <div className="flex items-center gap-3">
-          <img src={logoIcon} alt="Instituto Casa" className="w-8 h-8 opacity-60" />
+          <img src={logoIcon} alt="Instituto Casa" className="w-8 h-8 " />
           <p className="text-sm text-muted-foreground">
             © {currentYear} Instituto Casa. {t("footer.rights")}
           </p>

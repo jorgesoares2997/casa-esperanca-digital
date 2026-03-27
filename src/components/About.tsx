@@ -14,7 +14,7 @@ const About = () => {
         ))}
       </div>
       {/* Circular logo watermark */}
-      <div className="absolute bottom-8 left-8 md:bottom-12 md:left-12 opacity-[0.04]">
+      <div className="absolute bottom-8 left-8 md:bottom-12 md:left-12 ">
         <img src={logoCircular} alt="" aria-hidden="true" className="w-32 md:w-48" />
       </div>
 
