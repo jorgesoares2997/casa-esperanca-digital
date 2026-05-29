@@ -1,6 +1,5 @@
 import { useLanguage } from "@/contexts/LanguageContext";
 import { LCornerGrid, ChevronDivider, ChevronRight, BRAND } from "@/components/BrandPatterns";
-import pregnantImage from "@/assets/service-pregnant.jpg";
 import schoolImage from "@/assets/service-school.jpg";
 import nutritionImage from "@/assets/service-nutrition.jpg";
 import legalImage from "@/assets/service-legal.jpg";
@@ -8,14 +7,25 @@ import psychologyImage from "@/assets/service-psychology.jpg";
 import physioImage from "@/assets/service-physio.jpg";
 import nursingImage from "@/assets/service-nursing.jpg";
 
+const pregnantVideoUrl = "https://port-bu.s3.eu-north-1.amazonaws.com/gerandoamor.mov";
+const pregnantVideoUrlMobile = "https://port-bu.s3.eu-north-1.amazonaws.com/gerandoamormobile.mov";
+
 const Services = () => {
   const { t } = useLanguage();
 
-  const services = [
+  const services: Array<{
+    titleKey: string;
+    descKey: string;
+    image?: string;
+    video?: boolean;
+    comingSoon?: boolean;
+    waitingProfessionals?: boolean;
+    subtitle?: string;
+  }> = [
     {
       titleKey: "services.pregnant.title",
       descKey: "services.pregnant.desc",
-      image: pregnantImage,
+      video: true,
     },
     {
       titleKey: "services.school.title",
@@ -95,16 +105,31 @@ const Services = () => {
                 index < 2 ? "lg:col-span-1" : ""
               } dark:ring-1 dark:ring-white/10 dark:shadow-[0_8px_30px_rgba(0,0,0,0.35)]`}
             >
-              <img
-                src={service.image}
-                alt={t(service.titleKey)}
-                loading="lazy"
-                width={800}
-                height={600}
-                className={`w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 ${
-                  service.comingSoon ? "grayscale-[30%]" : ""
-                }`}
-              />
+              {service.video ? (
+                <video
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  preload="auto"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  aria-hidden="true"
+                >
+                  <source src={pregnantVideoUrl} type="video/mp4" />
+                  <source src={pregnantVideoUrl} />
+                </video>
+              ) : (
+                <img
+                  src={service.image}
+                  alt={t(service.titleKey)}
+                  loading="lazy"
+                  width={800}
+                  height={600}
+                  className={`w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 ${
+                    service.comingSoon ? "grayscale-[30%]" : ""
+                  }`}
+                />
+              )}
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent dark:from-black/90 dark:via-black/45 dark:to-black/10" />
               
               {service.comingSoon && (

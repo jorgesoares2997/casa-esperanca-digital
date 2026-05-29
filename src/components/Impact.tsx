@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
   Carousel,
   CarouselApi,
@@ -8,6 +8,60 @@ import {
 import ScrollRevealText from "@/components/ScrollRevealText";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { ChevronGrid, BRAND } from "@/components/BrandPatterns";
+
+const TestimonialCard = ({
+  text,
+  name,
+  role,
+  longText,
+  seeMoreLabel,
+  seeLessLabel,
+}: {
+  text: string;
+  name: string;
+  role: string;
+  longText?: boolean;
+  seeMoreLabel: string;
+  seeLessLabel: string;
+}) => {
+  const [expanded, setExpanded] = useState(false);
+  const [isClamped, setIsClamped] = useState(false);
+  const textRef = useRef<HTMLParagraphElement>(null);
+
+  useEffect(() => {
+    const el = textRef.current;
+    if (!el || !longText) return;
+    setIsClamped(el.scrollHeight > el.clientHeight);
+  }, [longText, text]);
+
+  return (
+    <blockquote className="space-y-6 rounded-xl border border-border bg-card p-6 md:p-8 h-full flex flex-col">
+      <div className="flex-1">
+        <p
+          ref={textRef}
+          className={`text-lg md:text-xl text-foreground leading-relaxed font-serif italic transition-all duration-300 ${
+            longText && !expanded ? "line-clamp-6" : ""
+          }`}
+        >
+          "{text}"
+        </p>
+        {longText && (isClamped || expanded) && (
+          <button
+            type="button"
+            onClick={() => setExpanded((v) => !v)}
+            className="mt-2 text-sm font-medium text-accent hover:underline focus-visible:outline-none"
+          >
+            {expanded ? seeLessLabel : seeMoreLabel}
+          </button>
+        )}
+      </div>
+      <footer>
+        <p className="font-semibold text-foreground text-sm">{name}</p>
+        <p className="text-muted-foreground text-sm">{role}</p>
+      </footer>
+    </blockquote>
+  );
+};
 
 const Impact = () => {
   const { t } = useLanguage();
@@ -73,6 +127,12 @@ const Impact = () => {
       textKey: "impact.t3.text",
       nameKey: "impact.t3.name",
       roleKey: "impact.t3.role",
+    },
+    {
+      textKey: "impact.t4.text",
+      nameKey: "impact.t4.name",
+      roleKey: "impact.t4.role",
+      longText: true,
     },
   ];
 
@@ -151,15 +211,14 @@ const Impact = () => {
             <CarouselContent>
               {testimonials.map((testimonial, index) => (
                 <CarouselItem key={index} className="basis-full md:basis-1/2">
-                  <blockquote className="space-y-6 rounded-xl border border-border bg-card p-6 md:p-8 h-full">
-                    <p className="text-lg md:text-xl text-foreground leading-relaxed font-serif italic">
-                      "{t(testimonial.textKey)}"
-                    </p>
-                    <footer>
-                      <p className="font-semibold text-foreground text-sm">{t(testimonial.nameKey)}</p>
-                      <p className="text-muted-foreground text-sm">{t(testimonial.roleKey)}</p>
-                    </footer>
-                  </blockquote>
+                  <TestimonialCard
+                    text={t(testimonial.textKey)}
+                    name={t(testimonial.nameKey)}
+                    role={t(testimonial.roleKey)}
+                    longText={testimonial.longText}
+                    seeMoreLabel={t("impact.seeMore")}
+                    seeLessLabel={t("impact.seeLess")}
+                  />
                 </CarouselItem>
               ))}
             </CarouselContent>

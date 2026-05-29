@@ -74,6 +74,14 @@ const translations: Translations = {
   },
   "impact.t3.name": { pt: "Maria Vaniclea", en: "Maria Vaniclea" },
   "impact.t3.role": { pt: "Assistente social", en: "Social worker" },
+  "impact.t4.text": {
+    pt: "Me chamo Pâmela, sou mãe do João Gael, e tenho a imensa alegria e privilégio em servir como voluntária nesse projeto tão lindo chamado Gerando amor. Eu como mãe, sei o quanto é gratificante e ao mesmo tempo é desafiador gerar um bebê. Além do amor e alegria pela chegada de um filho também sentimos medos, ansiedades e muitos outros sentimentos. E o Gerando amor, vem para trazer o cuidado de Deus por essas mamães. São tantas mãos que se unem, com doações e servindo, para fazer com que este momento se torne especial na vida delas e de seus bebês. Muitas delas chegam inseguras, cheias de medos e preocupadas com o enxoval para os seus bebês. Mas lindo ver no rostinho e nos olhos delas a alegria de viver esse momento tão especial e cheio de amor preparado para elas. Seja você também um semeador desse projeto tão lindo.",
+    en: "My name is Pâmela, I am the mother of João Gael, and I have the immense joy and privilege of serving as a volunteer in this beautiful project called Gerando Amor. As a mother, I know how gratifying and at the same time how challenging it is to carry a baby. Besides the love and joy of a child's arrival, we also feel fears, anxieties, and many other feelings. And Gerando Amor comes to bring God's care to these mothers. So many hands join together, with donations and serving, to make this moment special in their lives and in their babies' lives. Many of them arrive insecure, full of fears and worried about the baby's layette. But it's beautiful to see in their faces and eyes the joy of living this so special moment full of love prepared for them. Be you also a sower of this beautiful project."
+  },
+  "impact.t4.name": { pt: "Pâmela", en: "Pâmela" },
+  "impact.t4.role": { pt: "Voluntária do Gerando Amor", en: "Volunteer at Gerando Amor" },
+  "impact.seeMore": { pt: "Ver mais", en: "See more" },
+  "impact.seeLess": { pt: "Ver menos", en: "See less" },
 
   // HowToHelp
   "help.tag": { pt: "Como apoiar", en: "How to help" },
