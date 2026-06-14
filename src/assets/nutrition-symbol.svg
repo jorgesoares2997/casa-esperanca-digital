@@ -1,0 +1,129 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 420" fill="none">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="50%" r="75%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#22c55e"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="500" height="420" fill="url(#bg)"/>
+
+  <!-- ── SHIELD ─────────────────────────────────────────────────────────── -->
+  <!-- Outer shield -->
+  <path d="M250 32
+           C250 32 340 32 356 48
+           L356 210
+           C356 298 250 364 250 364
+           C250 364 144 298 144 210
+           L144 48
+           C144 32 250 32 250 32 Z"
+        stroke="#1a7a35" stroke-width="4" fill="white" fill-opacity="0.55"/>
+  <!-- Inner shield border -->
+  <path d="M250 48
+           C250 48 332 48 344 62
+           L344 208
+           C344 284 250 344 250 344
+           C250 344 156 284 156 208
+           L156 62
+           C156 48 250 48 250 48 Z"
+        stroke="#1a7a35" stroke-width="2" fill="none"/>
+
+  <!-- ── PEDESTAL / BASE ─────────────────────────────────────────────────── -->
+  <path d="M206 308 L250 244 L294 308 Z" fill="#1a7a35"/>
+  <rect x="198" y="306" width="104" height="12" rx="3" fill="#1a7a35"/>
+
+  <!-- ── STAFF ────────────────────────────────────────────────────────────── -->
+  <line x1="250" y1="78" x2="250" y2="308" stroke="#1a7a35" stroke-width="5.5" stroke-linecap="round"/>
+
+  <!-- ── CROSS AT TOP ────────────────────────────────────────────────────── -->
+  <!-- Vertical part already covered by staff -->
+  <line x1="235" y1="98" x2="265" y2="98" stroke="#1a7a35" stroke-width="5" stroke-linecap="round"/>
+  <line x1="250" y1="78" x2="250" y2="78" stroke="#1a7a35" stroke-width="5" stroke-linecap="round"/>
+  <!-- Top knob -->
+  <circle cx="250" cy="80" r="5" fill="#1a7a35"/>
+
+  <!-- ── SCALE BEAM ─────────────────────────────────────────────────────── -->
+  <line x1="188" y1="152" x2="312" y2="152" stroke="#1a7a35" stroke-width="4.5" stroke-linecap="round"/>
+  <!-- Pivot -->
+  <circle cx="250" cy="152" r="5.5" fill="#1a7a35"/>
+
+  <!-- Left pan cords -->
+  <line x1="192" y1="152" x2="182" y2="178" stroke="#1a7a35" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="192" y1="152" x2="214" y2="178" stroke="#1a7a35" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- Left pan bowl -->
+  <path d="M178 178 Q198 194 218 178" stroke="#1a7a35" stroke-width="3" fill="none" stroke-linecap="round"/>
+
+  <!-- Right pan cords -->
+  <line x1="308" y1="152" x2="286" y2="178" stroke="#1a7a35" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="308" y1="152" x2="318" y2="178" stroke="#1a7a35" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- Right pan bowl -->
+  <path d="M282 178 Q302 194 322 178" stroke="#1a7a35" stroke-width="3" fill="none" stroke-linecap="round"/>
+
+  <!-- ── SNAKE ────────────────────────────────────────────────────────────── -->
+  <!-- Lower coil — goes right then up, crossing over staff -->
+  <path d="M250 290
+           C284 284 300 264 286 246
+           C272 228 238 228 234 212
+           C230 196 248 182 268 172
+           C282 164 288 148 274 136
+           C262 126 244 128 240 116"
+        stroke="#1a7a35" stroke-width="4.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Snake head -->
+  <ellipse cx="244" cy="112" rx="13" ry="8" fill="#1a7a35" transform="rotate(-40 244 112)"/>
+  <!-- Eye -->
+  <circle cx="239" cy="108" r="2.2" fill="white"/>
+  <!-- Forked tongue -->
+  <path d="M235 114 L229 119" stroke="#1a7a35" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+  <path d="M229 119 L226 117" stroke="#1a7a35" stroke-width="1.6" stroke-linecap="round" fill="none"/>
+  <path d="M229 119 L227 122" stroke="#1a7a35" stroke-width="1.6" stroke-linecap="round" fill="none"/>
+
+  <!-- ── LEFT LAUREL BRANCH ─────────────────────────────────────────────── -->
+  <path d="M242 374 C222 364 196 348 170 324 C152 308 138 288 128 266"
+        stroke="#1a7a35" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <!-- Leaf pairs going up-left -->
+  <!-- pair 1 -->
+  <ellipse cx="226" cy="366" rx="11" ry="5" fill="none" stroke="#1a7a35" stroke-width="2.2" transform="rotate(-38 226 366)"/>
+  <ellipse cx="218" cy="370" rx="10" ry="5" fill="none" stroke="#1a7a35" stroke-width="2.2" transform="rotate(-12 218 370)"/>
+  <!-- pair 2 -->
+  <ellipse cx="208" cy="354" rx="11" ry="5" fill="none" stroke="#1a7a35" stroke-width="2.2" transform="rotate(-48 208 354)"/>
+  <ellipse cx="200" cy="360" rx="10" ry="5" fill="none" stroke="#1a7a35" stroke-width="2.2" transform="rotate(-18 200 360)"/>
+  <!-- pair 3 -->
+  <ellipse cx="190" cy="340" rx="11" ry="5" fill="none" stroke="#1a7a35" stroke-width="2.2" transform="rotate(-55 190 340)"/>
+  <ellipse cx="182" cy="347" rx="10" ry="5" fill="none" stroke="#1a7a35" stroke-width="2.2" transform="rotate(-22 182 347)"/>
+  <!-- pair 4 -->
+  <ellipse cx="172" cy="325" rx="10" ry="5" fill="none" stroke="#1a7a35" stroke-width="2.2" transform="rotate(-62 172 325)"/>
+  <ellipse cx="164" cy="332" rx="9" ry="4.5" fill="none" stroke="#1a7a35" stroke-width="2.2" transform="rotate(-28 164 332)"/>
+  <!-- pair 5 -->
+  <ellipse cx="155" cy="308" rx="10" ry="5" fill="none" stroke="#1a7a35" stroke-width="2.2" transform="rotate(-68 155 308)"/>
+  <ellipse cx="148" cy="316" rx="9" ry="4.5" fill="none" stroke="#1a7a35" stroke-width="2.2" transform="rotate(-34 148 316)"/>
+  <!-- pair 6 -->
+  <ellipse cx="140" cy="290" rx="9" ry="4.5" fill="none" stroke="#1a7a35" stroke-width="2.2" transform="rotate(-72 140 290)"/>
+  <ellipse cx="133" cy="297" rx="8" ry="4" fill="none" stroke="#1a7a35" stroke-width="2.2" transform="rotate(-38 133 297)"/>
+
+  <!-- ── RIGHT LAUREL BRANCH (mirror) ──────────────────────────────────── -->
+  <path d="M258 374 C278 364 304 348 330 324 C348 308 362 288 372 266"
+        stroke="#1a7a35" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <!-- pair 1 -->
+  <ellipse cx="274" cy="366" rx="11" ry="5" fill="none" stroke="#1a7a35" stroke-width="2.2" transform="rotate(38 274 366)"/>
+  <ellipse cx="282" cy="370" rx="10" ry="5" fill="none" stroke="#1a7a35" stroke-width="2.2" transform="rotate(12 282 370)"/>
+  <!-- pair 2 -->
+  <ellipse cx="292" cy="354" rx="11" ry="5" fill="none" stroke="#1a7a35" stroke-width="2.2" transform="rotate(48 292 354)"/>
+  <ellipse cx="300" cy="360" rx="10" ry="5" fill="none" stroke="#1a7a35" stroke-width="2.2" transform="rotate(18 300 360)"/>
+  <!-- pair 3 -->
+  <ellipse cx="310" cy="340" rx="11" ry="5" fill="none" stroke="#1a7a35" stroke-width="2.2" transform="rotate(55 310 340)"/>
+  <ellipse cx="318" cy="347" rx="10" ry="5" fill="none" stroke="#1a7a35" stroke-width="2.2" transform="rotate(22 318 347)"/>
+  <!-- pair 4 -->
+  <ellipse cx="328" cy="325" rx="10" ry="5" fill="none" stroke="#1a7a35" stroke-width="2.2" transform="rotate(62 328 325)"/>
+  <ellipse cx="336" cy="332" rx="9" ry="4.5" fill="none" stroke="#1a7a35" stroke-width="2.2" transform="rotate(28 336 332)"/>
+  <!-- pair 5 -->
+  <ellipse cx="345" cy="308" rx="10" ry="5" fill="none" stroke="#1a7a35" stroke-width="2.2" transform="rotate(68 345 308)"/>
+  <ellipse cx="352" cy="316" rx="9" ry="4.5" fill="none" stroke="#1a7a35" stroke-width="2.2" transform="rotate(34 352 316)"/>
+  <!-- pair 6 -->
+  <ellipse cx="360" cy="290" rx="9" ry="4.5" fill="none" stroke="#1a7a35" stroke-width="2.2" transform="rotate(72 360 290)"/>
+  <ellipse cx="367" cy="297" rx="8" ry="4" fill="none" stroke="#1a7a35" stroke-width="2.2" transform="rotate(38 367 297)"/>
+
+  <!-- ── CROSSING STEMS AT BOTTOM ───────────────────────────────────────── -->
+  <line x1="225" y1="390" x2="275" y2="374" stroke="#1a7a35" stroke-width="3" stroke-linecap="round"/>
+  <line x1="275" y1="390" x2="225" y2="374" stroke="#1a7a35" stroke-width="3" stroke-linecap="round"/>
+</svg>

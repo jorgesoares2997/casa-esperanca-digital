@@ -48,6 +48,14 @@ export default {
           foreground: "hsl(var(--card-foreground))",
         },
         "surface-warm": "hsl(var(--surface-warm))",
+        teal: {
+          DEFAULT: "hsl(var(--teal))",
+          foreground: "hsl(var(--teal-foreground))",
+        },
+        "section-light": "hsl(var(--section-light))",
+        "section-dark": "hsl(var(--section-dark))",
+        "heading-on-light": "hsl(var(--heading-on-light))",
+        "heading-on-dark": "hsl(var(--heading-on-dark))",
       },
       borderRadius: {
         lg: "var(--radius)",

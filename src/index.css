@@ -43,6 +43,18 @@
 
     /* warm surface uses green tint */
     --surface-warm: 170.3 40% 94%;
+
+    /* teal brand color (#49C5B1) */
+    --teal: 170.3 51.7% 53%;
+    --teal-foreground: 0 0% 100%;
+
+    /* section backgrounds */
+    --section-light: 0 0% 96.9%;        /* #f6f6f6 */
+    --section-dark: 226.3 90% 12%;      /* #06103a */
+
+    /* heading override for sections */
+    --heading-on-light: 226.3 100% 22.4%;   /* #001A72 */
+    --heading-on-dark: 220 60% 94%;         /* #e9eeff */
   }
 
   .dark {
@@ -75,6 +87,15 @@
     --ring: 170.3 51.7% 45%;
 
     --surface-warm: 170.3 40% 18%;
+
+    /* teal unchanged in dark */
+    --teal: 170.3 51.7% 53%;
+    --teal-foreground: 0 0% 100%;
+
+    --section-light: 0 0% 96.9%;
+    --section-dark: 226.3 90% 12%;
+    --heading-on-light: 226.3 100% 22.4%;
+    --heading-on-dark: 220 60% 94%;
   }
 }
 
