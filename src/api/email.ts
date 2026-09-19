@@ -13,10 +13,10 @@ export interface EmailData {
 export const sendEmailMessage = async (data: EmailData): Promise<{ success: boolean; message?: string }> => {
   // Simulate network request delay
   await new Promise((resolve) => setTimeout(resolve, 1500));
-  
+
   // Log to console for development purposes
   console.log("Simulating email send...");
-  console.log("To: oinstitutocasa@gmail.com and CC:", data.email);
+  console.log("To: administracao@institutocasape.org.br and CC:", data.email);
   console.log("Data:", data);
 
   // Return success

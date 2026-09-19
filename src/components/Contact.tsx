@@ -5,7 +5,7 @@ const Contact = () => {
   const { t } = useLanguage();
 
   const contactInfo = [
-    { icon: Mail, label: "oinstitutocasa@gmail.com" },
+    { icon: Mail, label: "administracao@institutocasape.org.br" },
     { icon: Phone, label: "(81) 97318-3247" },
     { icon: MapPin, label: "R. Aroazes, 42 — Prazeres, Jaboatão dos Guararapes – PE" },
     { icon: Clock, label: "Terça e quarta, 09h–17h" },
